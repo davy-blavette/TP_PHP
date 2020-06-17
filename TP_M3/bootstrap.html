@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="./vendor/bootstrap-4.5.0-dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="./vendor/slick-1.9.0/slick.css">
     <link rel="stylesheet" href="./vendor/slick-1.9.0/slick-theme.css">
+    <link rel="stylesheet" href="./vendor/summernote-0.8.18/summernote.min.css">
 
     <link rel="stylesheet" href="./css/main.css" />
 
@@ -104,7 +105,7 @@
                         </ul>
 
                     </div>
-                    <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+                    <div id="articles" class="col-12 col-sm-6 col-md-4 col-lg-4">
                         <article class="art1">
                             <h2>Article 1</h2>
                             <p class="intro">
@@ -125,8 +126,14 @@
                             </p>
                             <button class="btn btn-primary more">En savoir plus</button>
                         </article>
+
                     </div>
-                    <div class="col-12 col-md-4 col-lg-4">Colonne 3</div>
+                    <div class="col-12 col-md-4 col-lg-4">
+                        <div class="wysiwyg">
+                            <textarea id="summernote"></textarea>
+                            <button class="btn btn-primary">Ajouter</button>
+                        </div>
+                    </div>
                 </div>
 
             </div>
@@ -144,9 +151,13 @@
         </div>
     </footer>
 
-
     <script src="./js/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+            integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="./vendor/bootstrap-4.5.0-dist/js/bootstrap.min.js"></script>
     <script src="./vendor/slick-1.9.0/slick.js"></script>
+    <script src="./vendor/summernote-0.8.18/summernote.min.js"></script>
+
     <script src="./js/main.js"></script>
 
 </body>

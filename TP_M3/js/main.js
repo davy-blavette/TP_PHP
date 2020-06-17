@@ -11,6 +11,7 @@ $( document ).ready(function() {
 
         });
 
+    $('#summernote').summernote();
 
 /* Exemple a ne pas faire
     $('article.art1 button').on("click",function(){
@@ -91,6 +92,19 @@ $( document ).ready(function() {
             $(this).html('Réduire');
 
         }
+
+    });
+
+    $('.wysiwyg button').on("click",function(){
+
+        console.log('Wysiwyg Ok');
+
+        var mywysiwyg = $('.note-editable').html();
+
+        $("#articles").append('<article>'+mywysiwyg+'</article>');
+
+
+
 
     });
 
