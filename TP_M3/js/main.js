@@ -95,7 +95,7 @@ $( document ).ready(function() {
 
     });
 
-    $('.wysiwyg button').on("click",function(){
+    $('.wysiwyg button#wysiwyg').on("click",function(){
 
         console.log('Wysiwyg Ok');
 
