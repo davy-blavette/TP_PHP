@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="./vendor/slick-1.9.0/slick-theme.css">
     <link rel="stylesheet" href="./vendor/summernote-0.8.18/summernote.min.css">
 
+    <!-- Gestion de version et du cache en mode dev -->
     <link rel="stylesheet" href="./css/main.css?v=1.<?php echo time() ?>" />
 
 </head>
@@ -105,7 +106,7 @@
                     <div id="articles" class="col-12 col-sm-6 col-md-4 col-lg-4">
 
                         <?php
-                        //for
+                        //Boucle for
                         for($nb_article = 1; $nb_article < 10 ; $nb_article++){ ?>
 
                                 <article class="art<?php echo $nb_article; ?>">
@@ -123,7 +124,7 @@
                         <?php } ?>
 
                         <?php
-                        //while ou do while
+                        //Boucle While
 
                         while ($nb_article < 20){
 
@@ -141,13 +142,14 @@
                                 <button class="btn btn-primary more">En savoir plus</button>
                             </article>
 
-                            <?php }  //foreach ?>
+                            <?php }  ?>
 
 
                         <?php
-
+                        //déclaration d'un tableau avec Array()
                         $tb_article = array('article 1','article 2','article 3','article 4');
 
+                        //Boucle Foreach
                         foreach ($tb_article as $title_article){
                         ?>
 
@@ -210,7 +212,7 @@
                         </div>
 
                         <?php
-
+                        //Tableaux imbriqués
                         $tb_member = array(
                                 25 => array(
                                     'prenom' => 'Vincent',
@@ -255,13 +257,15 @@
                             <h2>Nos Membres TB 2</h2>
                             <?php
 
-                            //exemple 2 même tableau en simplifiant le code
+                            //exemple 2 même tableau en optimisant le code
                             foreach ($tb_member as $id_member => $members){
                             echo '<div id="'. $key .'">';
+
+                                //boucle sur le second tableau
                                 foreach ($members as $libelle => $value){
 
                                     $class = '';
-
+                                    //Condition sur la gestion de la class CSS cotisation
                                     if($libelle == 'cotisation'){
                                         if($value == 1){
                                             $class = 'green';
@@ -306,6 +310,7 @@
     <script src="./vendor/slick-1.9.0/slick.js"></script>
     <script src="./vendor/summernote-0.8.18/summernote.min.js"></script>
 
+    <!-- Gestion de version et du cache en mode dev -->
     <script src="./js/main.js?v=1.<?php echo time() ?>"></script>
 
 </body>
