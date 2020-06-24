@@ -1,52 +1,10 @@
 <main>
     <!-- Breadcrumb Section Begin -->
-    <section class="breadcrumb-section set-bg" data-setbg="img/breadcrumb/classes-breadcrumb.jpg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumb-text">
-                        <h2>About</h2>
-                        <div class="breadcrumb-option">
-                            <a href="./index.html"><i class="fa fa-home"></i> Home</a>
-                            <span>About</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <?php include('./includes/tmpl/head_breadcrumb.php') ?>
     <!-- Breadcrumb Section End -->
 
     <!-- About Section Begin -->
-    <section class="about-section about-page spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="about-pic">
-                        <img src="img/about-pic.jpg" alt="">
-                        <a href="https://www.youtube.com/watch?v=SlPhMPnQ58k" class="play-btn video-popup">
-                            <img src="img/play.png" alt="">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="about-text">
-                        <h2>Story About Us</h2>
-                        <p class="first-para">Lorem ipsum proin gravida nibh vel velit auctor aliquet. Aenean pretium
-                            sollicitudin, nascetur auci elit consequat ipsutissem niuis sed odio sit amet nibh vulputate
-                            cursus a amet.</p>
-                        <p class="second-para">Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, gravida
-                            quam semper libero sit amet.</p>
-                        <img src="img/about-signature.png" alt="">
-                        <div class="at-author">
-                            <h4>Lettie Chavez</h4>
-                            <span>CEO - Founder</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <?php include('./includes/tmpl/signature.php') ?>
     <!-- About Section End -->
 
     <!-- About Counter Section Begin -->

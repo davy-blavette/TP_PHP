@@ -8,37 +8,43 @@
 $ar_pages_var = array(
 
     'accueil' => array(
-        'title' => 'Moto Club Millau Passion | Accueil',
-        'description' => 'Moto Club Millau Passion | Association de loisir autour de la moto !',
-        'keywords' => 'Moto, Plaisir, Club, Millau, Passion, Accueil',
-        'meteo' => 1
+        'title'         => 'Moto Club Millau Passion | Accueil',
+        'description'   => 'Moto Club Millau Passion | Association de loisir autour de la moto !',
+        'keywords'      => 'Moto, Plaisir, Club, Millau, Passion, Accueil',
+        'h1'            => 'Accueil',
+        'meteo'         => 1
     ),
     'activites' => array(
         'title' => 'Moto Club Millau Passion | Nos activités',
         'description' => 'Les activités de l\'association Moto Club Millau Passion',
         'keywords' => 'Activtés, Tarn, Deux roues, Millau, Passion, Accueil',
+        'h1'            => 'Activités',
         'meteo' => NULL
 
     ),
     'contact' => array(
         'title' => 'Moto Club Millau Passion | Nous contacter',
         'description' => 'Les activités de l\'association Moto Club Millau Passion',
-        'keywords' => 'Activtés, Tarn, Deux roues, Millau, Passion, Accueil'
+        'keywords' => 'Activtés, Tarn, Deux roues, Millau, Passion, Accueil',
+        'h1'            => 'Contact',
     ),
     'galerie' => array(
         'title' => 'Moto Club Millau Passion | Notre Galerie Photo',
         'description' => 'Les activités de l\'association Moto Club Millau Passion',
-        'keywords' => 'Activtés, Tarn, Deux roues, Millau, Passion, Accueil'
+        'keywords' => 'Activtés, Tarn, Deux roues, Millau, Passion, Accueil',
+        'h1'            => 'Galerie',
     ),
     'informations' => array(
         'title' => 'Moto Club Millau Passion | Les informations de l\'association',
         'description' => 'Les activités de l\'association Moto Club Millau Passion',
-        'keywords' => 'Activtés, Tarn, Deux roues, Millau, Passion, Accueil'
+        'keywords' => 'Activtés, Tarn, Deux roues, Millau, Passion, Accueil',
+        'h1'            => 'Informations',
     ),
     'presentation' => array(
         'title' => 'Moto Club Millau Passion | Présentation et histoire de làssociation',
         'description' => 'Les activités de l\'association Moto Club Millau Passion',
-        'keywords' => 'Activtés, Tarn, Deux roues, Millau, Passion, Accueil'
+        'keywords' => 'Activtés, Tarn, Deux roues, Millau, Passion, Accueil',
+        'h1'            => 'Présentation',
     ),
 );
 

@@ -3,20 +3,7 @@
 <main>
 
     <!-- Hero Section Begin -->
-    <section class="hero-section set-bg" data-setbg="img/hero-bg.jpg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                    <div class="hero-text">
-                        <span>FITNESS ELEMENTS</span>
-                        <h1>BMI CALCULATOR</h1>
-                        <p>Gutim comes packed with the user-friendly BMI Calculator<br /> shortcode which lets</p>
-                        <a href="#" class="primary-btn">Read More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <?php include('./includes/tmpl/head_full.php') ?>
     <!-- Hero Section End -->
 
     <!-- About Section Begin -->
@@ -34,6 +21,7 @@
                 <div class="col-lg-6">
                     <div class="about-text">
                         <h2>Story About Us</h2>
+
                         <p class="first-para">Lorem ipsum proin gravida nibh vel velit auctor aliquet. Aenean pretium
                             sollicitudin, nascetur auci elit consequat ipsutissem niuis sed odio sit amet nibh vulputate
                             cursus a amet.</p>

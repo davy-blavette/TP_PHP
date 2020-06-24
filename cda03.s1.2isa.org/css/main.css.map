@@ -80,8 +80,8 @@
 		"sass/_footer.scss"
 	],
 	"sourcesContent": [
-		"@import 'config';\r\n\r\n#main{\r\n\r\n\r\n\r\n}",
-		"@import \"compass\";\r\n\r\n$pm: 10px;\r\n$hc: 100px;\r\n\r\n$color1: #248bbb;\r\n$color2: #1d4fa5;\r\n$color3:rgba(100, 99, 100, 0.5);\r\n$color4: #972aee;\r\n\r\n@import 'member';\r\n@import 'button';\r\n@import 'header';\r\n@import 'query';\r\n@import 'footer';",
+		"@import 'config';\r\n\r\nmain{\r\n\r\n  .breadcrumb-text{\r\n\r\n    h1{\r\n\r\n      color:$color1;\r\n\r\n    }\r\n\r\n\r\n  }\r\n\r\n\r\n}",
+		"@import \"compass\";\r\n\r\n$pm: 10px;\r\n$hc: 100px;\r\n\r\n$color1: #ffffff;\r\n$color2: #1d4fa5;\r\n$color3:rgba(100, 99, 100, 0.5);\r\n$color4: #972aee;\r\n\r\n@import 'member';\r\n@import 'button';\r\n@import 'header';\r\n@import 'query';\r\n@import 'footer';",
 		"@import '../../node_modules/compass-mixins/lib/_compass.scss';\n",
 		"@import \"compass/functions\";\n@import \"compass/utilities\";\n@import \"compass/typography\";\n@import \"compass/css3\";\n",
 		"@import \"functions/lists\";\n@import \"functions/cross_browser_support\";\n@import \"functions/gradient_support\";\n@import \"functions/constants\";\n@import \"functions/display\";\n@import \"functions/colors\";\n",
@@ -158,5 +158,5 @@
 		"#footer{\r\n\r\n}"
 	],
 	"names": [],
-	"mappings": ""
+	"mappings": ";AAEA,AAII,IAJA,CAEF,gBAAgB,CAEd,EAAE,CAAA;EAEA,KAAK,ECHF,OAAO;CDKX"
 }
