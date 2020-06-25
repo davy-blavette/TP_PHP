@@ -1,52 +1,30 @@
 <?php
 
+//mon fichier config PDO, base de données
+include('./config/config.php');
+
 //Superglobal $_GET
 
 //pour afficher les informations du variable
 //var_dump($_GET['page']);
 
-$ar_pages_var = array(
 
-    'accueil' => array(
-        'title'         => 'Moto Club Millau Passion | Accueil',
-        'description'   => 'Moto Club Millau Passion | Association de loisir autour de la moto !',
-        'keywords'      => 'Moto, Plaisir, Club, Millau, Passion, Accueil',
-        'h1'            => 'Accueil',
-        'meteo'         => 1
-    ),
-    'activites' => array(
-        'title' => 'Moto Club Millau Passion | Nos activités',
-        'description' => 'Les activités de l\'association Moto Club Millau Passion',
-        'keywords' => 'Activtés, Tarn, Deux roues, Millau, Passion, Accueil',
-        'h1'            => 'Activités',
-        'meteo' => NULL
 
-    ),
-    'contact' => array(
-        'title' => 'Moto Club Millau Passion | Nous contacter',
-        'description' => 'Les activités de l\'association Moto Club Millau Passion',
-        'keywords' => 'Activtés, Tarn, Deux roues, Millau, Passion, Accueil',
-        'h1'            => 'Contact',
-    ),
-    'galerie' => array(
-        'title' => 'Moto Club Millau Passion | Notre Galerie Photo',
-        'description' => 'Les activités de l\'association Moto Club Millau Passion',
-        'keywords' => 'Activtés, Tarn, Deux roues, Millau, Passion, Accueil',
-        'h1'            => 'Galerie',
-    ),
-    'informations' => array(
-        'title' => 'Moto Club Millau Passion | Les informations de l\'association',
-        'description' => 'Les activités de l\'association Moto Club Millau Passion',
-        'keywords' => 'Activtés, Tarn, Deux roues, Millau, Passion, Accueil',
-        'h1'            => 'Informations',
-    ),
-    'presentation' => array(
-        'title' => 'Moto Club Millau Passion | Présentation et histoire de làssociation',
-        'description' => 'Les activités de l\'association Moto Club Millau Passion',
-        'keywords' => 'Activtés, Tarn, Deux roues, Millau, Passion, Accueil',
-        'h1'            => 'Présentation',
-    ),
-);
+//la requete
+$reponse = $bdd->query('SELECT * FROM page');
+
+//push tableau array() PHP
+$ar_pages_var = array();
+
+
+//boucle les données récupérées
+while ($donnees = $reponse->fetch()) {
+
+    //courage !
+    $ar_pages_var[$donnees['key_file']] = $donnees;
+
+}
+
 
 //valeur par default
 $page = 'accueil';
@@ -62,9 +40,11 @@ if(isset($_GET['page'])){
     }
 }
 
+//var_dump($ar_pages_var);
+
 //contenu de variable en fonction de 'page'
-$title = $ar_pages_var[$page]['title'];
-$description = $ar_pages_var[$page]['description'];
+$title = $ar_pages_var[$page]['metatitle'];
+$description = $ar_pages_var[$page]['metadescription'];
 $keywords = $ar_pages_var[$page]['keywords'];
 
 //les includes de contenu layout
