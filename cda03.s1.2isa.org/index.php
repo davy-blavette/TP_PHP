@@ -3,9 +3,9 @@
 //mon fichier config PDO, base de données
 include('./config/config.php');
 
-//Superglobal $_GET
 
-//pour afficher les informations du variable
+
+//var_dump() - pour afficher les informations de variable
 //var_dump($_GET['page']);
 
 
@@ -13,14 +13,14 @@ include('./config/config.php');
 //la requete
 $reponse = $bdd->query('SELECT * FROM page');
 
-//push tableau array() PHP
+//Initialisation de la variable tableau array() PHP
 $ar_pages_var = array();
 
 
 //boucle les données récupérées
 while ($donnees = $reponse->fetch()) {
 
-    //courage !
+    //ajout des données par index à la variable tableau $ar_pages_var
     $ar_pages_var[$donnees['key_file']] = $donnees;
 
 }
@@ -29,10 +29,11 @@ while ($donnees = $reponse->fetch()) {
 //valeur par default
 $page = 'accueil';
 
+//Superglobal $_GET -> récupération de l'information de l'URL ?page=presentation
 //test si la clef de l'url existe, si oui prend la valeur de l'information URL
 if(isset($_GET['page'])){
 
-    //on verifie que la clef esiste bien dans mon tableau $ar_pages_var
+    //on verifie que la clef esiste bien dans mon tableau $ar_pages_var (fichier valide)
     if(array_key_exists($_GET['page'], $ar_pages_var)){
 
         $page = $_GET['page'];
@@ -44,12 +45,13 @@ if(isset($_GET['page'])){
 
 //contenu de variable en fonction de 'page'
 $title = $ar_pages_var[$page]['metatitle'];
-$description = $ar_pages_var[$page]['metadescription'];
+$metadescription = $ar_pages_var[$page]['metadescription'];
 $keywords = $ar_pages_var[$page]['keywords'];
 
 //les includes de contenu layout
 include('./includes/layout/header.php');
 
+//include du fichier de page reprenant la $page
 include('./includes/pages/'.$page.'.php');
 
 include('./includes/layout/footer.php');
