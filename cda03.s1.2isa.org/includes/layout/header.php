@@ -42,6 +42,7 @@
         <div class="nav-menu">
             <nav class="mainmenu mobile-menu">
                 <ul>
+                    <!-- Réaliser TP fil rouge avec SELECT pour génerer le menu -->
                     <li class="<?php if($page == 'accueil'){echo 'active';} ?>"><a href="./index.php">Accueil</a></li>
                     <li class="<?php if($page == 'presentation'){echo 'active';} ?>"><a href="./index.php?page=presentation">Présentation</a></li>
                     <li class="<?php echo $page == 'activites' ? 'active' : ''; ?>"><a href="./index.php?page=activites">Activités</a></li>
@@ -50,7 +51,7 @@
                     <li class="<?php echo $page == 'contact' ? 'active' : ''; ?>"><a href="./index.php?page=contact">Contacts</a></li>
                 </ul>
             </nav>
-            <a href="#" class="primary-btn signup-btn">Sign Up Today</a>
+            <a href="./index.php?page=inscription" class="primary-btn signup-btn">Inscription</a>
         </div>
         <div id="mobile-menu-wrap"></div>
     </div>

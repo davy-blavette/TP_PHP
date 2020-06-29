@@ -3,6 +3,9 @@
 //mon fichier config PDO, base de données
 include('./config/config.php');
 
+//mes librairies PHP
+//Gestion des formulaire type $_POST
+include('./lib/formulaire.php');
 
 
 //var_dump() - pour afficher les informations de variable

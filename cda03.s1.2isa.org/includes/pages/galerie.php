@@ -20,7 +20,9 @@
             </div>
             <div class="row gallery-filter">
                 <div class="col-lg-6 mix all fitness">
-                    <img src="img/gallery/gallery-1.jpg" alt="">
+                    <a href="img/gallery/gallery-1.jpg" class="video-popup">
+                        <img src="img/gallery/gallery-1.jpg" alt="">
+                    </a>
                 </div>
                 <div class="col-lg-6">
                     <div class="row">
