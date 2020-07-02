@@ -4,20 +4,8 @@ if(!empty($_POST)){
 
     if (isset($_POST['formulaire']) && $_POST['formulaire'] == 'register'){
 
-        var_dump($_POST);
-/*
- 'password' => string 'test password' (length=13)
-  'prenom' => string 'test prenom' (length=11)
-  'nom' => string 'test nom' (length=8)
-  'dnaiss' => string '1980-01-22' (length=10)
-  'adresse1' => string 'test adresse' (length=12)
-  'cdpost' => string 'Test cp' (length=7)
-  'ville' => string 'test ville' (length=10)
-  'email' => string 'test@test.com' (length=13)
-  'tel' => string 'test tel' (length=8)
-  'cylindree' => string '250 cm3' (length=7)
-  'droit_image' => string 'on' (length=2)
-        */
+        //var_dump($_POST);
+
 
         $droit_image = $_POST["droit_image"] == 'on' ? 1 : 0;
 
@@ -53,9 +41,11 @@ if(!empty($_POST)){
             "'.$_POST["cylindree"].'"
             )';
 
-        echo "Query : ".$query;
+        //echo "Query : ".$query;
 
         $bdd->query($query);
+
+
 
     }
 
