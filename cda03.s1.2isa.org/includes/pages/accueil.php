@@ -330,10 +330,6 @@
     </section>
     <!-- Membership Section End -->
 
-    <!-- Register Section Begin -->
-    <?php include('./includes/tmpl/register.php') ?>
-    <!-- Register Section End -->
-
     <!-- Latest Blog Section Begin -->
     <section class="latest-blog-section spad">
         <div class="container">

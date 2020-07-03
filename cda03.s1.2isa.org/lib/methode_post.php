@@ -2,16 +2,19 @@
 //test de la super global $_POST si elle n'est pas vide '!empty()'
 if(!empty($_POST)){
 
-    if (isset($_POST['formulaire']) && $_POST['formulaire'] == 'register'){
+    if (isset($_POST['formulaire'])){
 
-        //var_dump($_POST);
+        if($_POST['formulaire'] == 'register'){
 
-
-        $droit_image = $_POST["droit_image"] == 'on' ? 1 : 0;
-
+            //var_dump($_POST);
 
 
-        $query = 'INSERT INTO adherent(
+            $droit_image = $_POST["droit_image"] == 'on' ? 1 : 0;
+            $cylindree = isset($_POST["cylindree"]) && !empty($cylindree) ? $_POST["cylindree"] : '';
+
+
+
+            $query = 'INSERT INTO adherent(
             Login,
             Password,
             Nom,
@@ -38,12 +41,30 @@ if(!empty($_POST)){
             "'.$_POST["tel"].'",
             1,
             '.$droit_image.',
-            "'.$_POST["cylindree"].'"
+            "'.$cylindree.'"
             )';
 
-        //echo "Query : ".$query;
+            //echo "Query : ".$query;
 
-        $bdd->query($query);
+            $bdd->query($query);
+
+            //information modal html
+            $message_modal = 'Inscription prise en compte, nous vous recontacterons.';
+
+        }else if($_POST['formulaire'] == 'update_profil'){
+
+            $query = 'UPDATE adherent SET 
+              Login = "'.$_POST["login"].'",
+              Prenom = "'.$_POST["prenom"].'",
+              cylindree = "'.$_POST["cylindree"].'"
+              WHERE IdAdherent = '.$_POST["IdAdherent"];
+
+
+            $bdd->query($query);
+            //information modal html
+            $message_modal = 'Votre profil est mis à jour.'.$query;
+
+        }
 
 
 

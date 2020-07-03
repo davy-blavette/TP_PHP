@@ -3,6 +3,8 @@
 //mon fichier config PDO, base de données
 include('./config/config.php');
 
+
+
 //mes librairies PHP
 //Gestion des formulaire type $_POST
 include('./lib/methode_post.php');

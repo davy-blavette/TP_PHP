@@ -1,6 +1,17 @@
-/* line 3, D:/dev/www/CDA03/GIT/Formation/cda03/cda03.s1.2isa.org/css/sass/_member.scss */
+/* line 4, D:/dev/www/CDA03/GIT/Formation/cda03/cda03.s1.2isa.org/css/sass/_member.scss */
 #members .row .single-member {
   margin-top: 100px;
+}
+
+/* line 8, D:/dev/www/CDA03/GIT/Formation/cda03/cda03.s1.2isa.org/css/sass/_member.scss */
+#members .row .single-member h5 a {
+  color: #000000;
+}
+
+/* line 12, D:/dev/www/CDA03/GIT/Formation/cda03/cda03.s1.2isa.org/css/sass/_member.scss */
+#members .row .single-member h5 a:hover {
+  color: #000000;
+  text-decoration: underline;
 }
 
 /* line 7, D:/dev/www/CDA03/GIT/Formation/cda03/cda03.s1.2isa.org/css/sass/main.scss */

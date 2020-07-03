@@ -2,7 +2,7 @@
     <div class="single-trainer-item">
         <img src="img/trainer/trainer-1.jpg" alt="">
         <div class="trainer-text">
-            <h5><?php echo $donnees['Prenom'].' '.$donnees['Nom']; ?></h5>
+            <h5><a href="./index.php?page=profil&id=<?php echo $donnees['IdAdherent']; ?>"><?php echo $donnees['Prenom'].' '.$donnees['Nom']; ?></a></h5>
             <span><?php echo $donnees['cylindree']; ?></span>
             <p>non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat
                 voluptatem.</p>

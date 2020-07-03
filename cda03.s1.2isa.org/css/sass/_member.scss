@@ -1,7 +1,23 @@
 #members{
 
+
   .row .single-member {
     margin-top:100px;
+
+
+    h5 a{
+
+      color: $color2;
+
+      &:hover{
+
+        color: $color2;
+        text-decoration: underline;
+
+      }
+
+    }
+
   }
 
 

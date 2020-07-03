@@ -31,6 +31,8 @@
     <div class="loader"></div>
 </div>
 
+<?php include('./includes/tmpl/modal.php'); ?>
+
 <!-- Header Section Begin -->
 <header class="header-section">
     <div class="container">

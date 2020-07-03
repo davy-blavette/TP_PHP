@@ -6,15 +6,16 @@
                 <div class="col-lg-8">
                     <div class="register-text">
                         <div class="section-title">
-                            <h2>Formulaire d'inscription</h2>
+                            <h2><?php echo $title_register; ?></h2>
                             <p>La cotisation est de septembre à août</p>
                         </div>
-                        <form action="./index.php?page=inscription" method="post" class="register-form">
-                            <input type="hidden" name="formulaire" value="register" />
+                        <form action="./index.php?page=<?php echo $page ?><?php echo isset($id) ? '&id='.$id : ''; ?>" method="post" class="register-form">
+                            <input type="hidden" name="formulaire" value="<?php echo $action; ?>" />
+                            <input type="hidden" name="IdAdherent" value="<?php echo isset($id) ? $id : ''; ?>" />
                             <div class="row">
                                 <div class="col-lg-6">
                                     <label for="name">Identifiant</label>
-                                    <input type="text" id="login" name="login" value="test identifiant" placeholder="" />
+                                    <input type="text" id="login" name="login" value="<?php echo isset($identifiant) ? $identifiant : 'test identifiant' ?>" placeholder="" />
                                 </div>
                                 <div class="col-lg-6">
                                     <label for="name">Mot de passe</label>
@@ -22,11 +23,11 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <label for="name">Prénom</label>
-                                    <input type="text" id="firstname" name="prenom" value="test prenom" placeholder="" />
+                                    <input type="text" id="firstname" name="prenom" value="<?php echo isset($prenom) ? $prenom : 'test prenom' ?>" placeholder="" />
                                 </div>
                                 <div class="col-lg-6">
                                     <label for="name">Nom</label>
-                                    <input type="text" id="name" name="nom" value="test nom" />
+                                    <input type="text" id="name" name="nom" value="<?php echo isset($nom) ? $nom : 'test nom' ?>" />
                                 </div>
                                 <div class="col-lg-6">
                                     <label for="name">Date de naissance</label>
@@ -61,18 +62,18 @@
                                 <div class="col-lg-6">
                                     <label for="mobile">Votre cylindrée</label>
                                     <label for="mobile">125 cm3</label>
-                                    <input type="radio" name="cylindree" value="125 cm3" />
+                                    <input type="radio" name="cylindree" value="125 cm3" <?php echo isset($cylindree) && $cylindree == "125 cm3" ? 'checked' : '';  ?>/>
                                     <label for="mobile">250 cm3</label>
-                                    <input type="radio" name="cylindree" value="250 cm3" checked />
+                                    <input type="radio" name="cylindree" value="250 cm3" <?php echo isset($cylindree) && $cylindree == "250 cm3" ? 'checked' : '';  ?>  />
                                     <label for="mobile">> 250 cm3</label>
-                                    <input type="radio" name="cylindree" value="> 250 cm3" />
+                                    <input type="radio" name="cylindree" value="> 250 cm3" <?php echo isset($cylindree) && $cylindree == "> 250 cm3" ? 'checked' : '';  ?>/>
                                 </div>
                                 <div class="col-lg-6">
                                     <label for="mobile">Vous acceptez que votre image soit utilisée sur le site internet</label>
                                     <input type="checkbox" id="droit" name="droit_image" checked />
                                 </div>
                             </div>
-                            <button type="submit" class="register-btn">S'inscrire</button>
+                            <button type="submit" class="register-btn"><?php echo $btn_register; ?></button>
                         </form>
                     </div>
                 </div>

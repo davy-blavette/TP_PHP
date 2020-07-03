@@ -143,7 +143,19 @@
        JQuery/Javascript
     --------------------*/
 
+    $('#my-modal .modal-footer .btn, #my-modal .close').on('click', function(){
 
+
+        $("#my-modal").hide();
+
+
+    });
+
+    if($('#my-modal .modal-body p').html().length){
+
+        $("#my-modal").show();
+
+    }
 
 
 

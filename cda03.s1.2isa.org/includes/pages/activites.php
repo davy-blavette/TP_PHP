@@ -4,9 +4,6 @@
     <?php include('./includes/tmpl/head_breadcrumb.php') ?>
     <!-- Breadcrumb Section End -->
 
-    <!-- Register Section Begin -->
-    <?php include('./includes/tmpl/register.php') ?>
-
     <!-- Register Section End -->
 
     <!-- Classes Section Begin -->

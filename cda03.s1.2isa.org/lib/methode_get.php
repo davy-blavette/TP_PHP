@@ -2,7 +2,7 @@
 
 
 
-//la requete
+//la requete de la table page
 $reponse = $bdd->query('SELECT * FROM page');
 
 //Initialisation de la variable tableau array() PHP
@@ -18,9 +18,6 @@ while ($donnees = $reponse->fetch()) {
 }
 
 
-//valeur par default
-$page = 'accueil';
-
 //Superglobal $_GET -> récupération de l'information de l'URL ?page=presentation
 //test si la clef de l'url existe, si oui prend la valeur de l'information URL
 if(isset($_GET['page']) && !empty($_GET['page']) ){
@@ -28,6 +25,7 @@ if(isset($_GET['page']) && !empty($_GET['page']) ){
     //on verifie que la clef esiste bien dans mon tableau $ar_pages_var (fichier valide)
     if(array_key_exists($_GET['page'], $ar_pages_var)){
 
+        //parametre de page
         $page = $_GET['page'];
 
 
@@ -42,6 +40,9 @@ if(isset($_GET['page']) && !empty($_GET['page']) ){
 
                     //lancement de la requete
                     $bdd->query('DELETE FROM adherent WHERE IdAdherent = '.$_GET['id']);
+
+                    //information modal html
+                    $message_modal = 'Utilisateur '.$_GET['id'].' supprimé.';
 
                 }
             }
