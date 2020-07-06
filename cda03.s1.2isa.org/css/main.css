@@ -14,7 +14,12 @@
   text-decoration: underline;
 }
 
-/* line 7, D:/dev/www/CDA03/GIT/Formation/cda03/cda03.s1.2isa.org/css/sass/main.scss */
+/* line 3, D:/dev/www/CDA03/GIT/Formation/cda03/cda03.s1.2isa.org/css/sass/main.scss */
+#my-modal {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* line 11, D:/dev/www/CDA03/GIT/Formation/cda03/cda03.s1.2isa.org/css/sass/main.scss */
 main .breadcrumb-text h1 {
   color: #ffffff;
 }

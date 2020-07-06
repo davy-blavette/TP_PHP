@@ -20,6 +20,7 @@
 
         }
 
+        //je transforme le H1 prévu coté BD
         $ar_pages_var[$page]['h1'] = $prenom.' '.$nom;
         $id = $_GET['id'];
 

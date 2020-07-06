@@ -23,6 +23,7 @@ while ($donnees = $reponse->fetch()) {
 if(isset($_GET['page']) && !empty($_GET['page']) ){
 
     //on verifie que la clef esiste bien dans mon tableau $ar_pages_var (fichier valide)
+    //securité - Fail include
     if(array_key_exists($_GET['page'], $ar_pages_var)){
 
         //parametre de page
@@ -32,17 +33,26 @@ if(isset($_GET['page']) && !empty($_GET['page']) ){
         //test sur les action de page
         if(isset($_GET['action']) && !empty($_GET['action'])){
 
-            //est-ce que l'action c'est delete ?
+            //est-ce que l'action c'est delete sur la page membres ?
             if($_GET['action'] == 'delete'){
 
                 //est-ce qu'on a une valeur d'id ?
                 if(isset($_GET['id']) && !empty($_GET['id'])){
 
-                    //lancement de la requete
-                    $bdd->query('DELETE FROM adherent WHERE IdAdherent = '.$_GET['id']);
+                    //est-ce que c'est sur la page membre ?
+                    if($page == 'membres'){
 
-                    //information modal html
-                    $message_modal = 'Utilisateur '.$_GET['id'].' supprimé.';
+                        //lancement de la requete
+                        $bdd->query('DELETE FROM adherent WHERE IdAdherent = '.$_GET['id']);
+
+                        //information modal html
+                        $message_modal = 'Utilisateur '.$_GET['id'].' supprimé.';
+
+                    }else if($page == 'activites'){
+                        //ici le code pour gérer les suppressions des activités
+
+
+                    }
 
                 }
             }

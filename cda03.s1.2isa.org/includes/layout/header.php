@@ -31,6 +31,7 @@
     <div class="loader"></div>
 </div>
 
+<!-- Modal HTML - Fentre d'information -->
 <?php include('./includes/tmpl/modal.php'); ?>
 
 <!-- Header Section Begin -->

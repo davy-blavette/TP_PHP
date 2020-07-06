@@ -59,10 +59,11 @@ if(!empty($_POST)){
               cylindree = "'.$_POST["cylindree"].'"
               WHERE IdAdherent = '.$_POST["IdAdherent"];
 
-
+            //execution de la requete
             $bdd->query($query);
+            
             //information modal html
-            $message_modal = 'Votre profil est mis à jour.'.$query;
+            $message_modal = 'Votre profil est mis à jour.';
 
         }
 

@@ -11,7 +11,7 @@
                 <a href="#"><i class="fa fa-instagram"></i></a>
                 <a href="#"><i class="fa fa-twitter"></i></a>
                 <a href="#"><i class="fa fa-pinterest"></i></a>
-                <a href="./index.php?page=members&action=delete&id=<?php echo $donnees['IdAdherent']; ?>"><i class="fa fa-remove"></i></a>
+                <a href="./index.php?page=membres&action=delete&id=<?php echo $donnees['IdAdherent']; ?>" alt="Supprimer" title="Supprimer"><i class="fa fa-remove"></i></a>
             </div>
         </div>
     </div>
