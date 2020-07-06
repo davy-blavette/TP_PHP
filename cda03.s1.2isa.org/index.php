@@ -1,4 +1,6 @@
 <?php
+//démarage des sessions
+session_start();
 
 //mon fichier config PDO, base de données
 include('./config/config.php');

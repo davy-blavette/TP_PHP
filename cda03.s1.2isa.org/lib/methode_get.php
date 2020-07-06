@@ -1,6 +1,16 @@
 <?php
 
 
+//gere la deconnexion
+if(isset($_GET['deconnexion']) && $_GET['deconnexion'] == 1){
+
+    //on détruit la session
+    session_destroy();
+    //on redirige la page apres destroy
+    header("location:index.php");
+
+}
+
 
 //la requete de la table page
 $reponse = $bdd->query('SELECT * FROM page');

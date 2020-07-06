@@ -52,9 +52,20 @@
                     <li class="<?php echo $page == 'informations' ? 'active' : ''; ?>"><a href="./index.php?page=informations">Informations</a></li>
                     <li class="<?php echo $page == 'galerie' ? 'active' : ''; ?>"><a href="./index.php?page=galerie">Galerie Photo</a></li>
                     <li class="<?php echo $page == 'contact' ? 'active' : ''; ?>"><a href="./index.php?page=contact">Contacts</a></li>
+                    <?php if(!isset($_SESSION['nom'])){ ?>
+                        <li class="<?php echo $page == 'connexion' ? 'active' : ''; ?>"><a href="./index.php?page=connexion">Connexion</a></li>
+                    <?php } ?>
+
                 </ul>
             </nav>
-            <a href="./index.php?page=inscription" class="primary-btn signup-btn">Inscription</a>
+
+            <?php if(isset($_SESSION['nom'])){ ?>
+                <a href="./index.php?page=profil&id=<?php echo $_SESSION['id_adherent'] ?>" class="primary-btn signup-btn"><?php echo $_SESSION['prenom'].' '.$_SESSION['nom'] ?></a>
+                <a href="./index.php?deconnexion=1" class="fa fa-sign-out"></a>
+
+            <?php }else{ ?>
+                <a href="./index.php?page=inscription" class="primary-btn signup-btn">Inscription</a>
+            <?php } ?>
         </div>
         <div id="mobile-menu-wrap"></div>
     </div>

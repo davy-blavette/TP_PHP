@@ -143,6 +143,7 @@
        JQuery/Javascript
     --------------------*/
 
+    //On gere les boutons qui ferme/cache la modal
     $('#my-modal .modal-footer .btn, #my-modal .close').on('click', function(){
 
 
@@ -151,6 +152,7 @@
 
     });
 
+    //on affiche la fenetre modal si on a du contenu entre les balises P
     if($('#my-modal .modal-body p').html().length){
 
         $("#my-modal").show();

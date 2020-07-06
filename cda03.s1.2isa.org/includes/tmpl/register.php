@@ -23,11 +23,11 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <label for="name">Prénom</label>
-                                    <input type="text" id="firstname" name="prenom" value="<?php echo isset($prenom) ? $prenom : 'test prenom' ?>" placeholder="" />
+                                    <input type="text" id="firstname" name="prenom" required value="<?php echo isset($prenom) ? $prenom : 'test prenom' ?>" placeholder="" />
                                 </div>
                                 <div class="col-lg-6">
                                     <label for="name">Nom</label>
-                                    <input type="text" id="name" name="nom" value="<?php echo isset($nom) ? $nom : 'test nom' ?>" />
+                                    <input type="text" id="name" name="nom" required value="<?php echo isset($nom) ? $nom : 'test nom' ?>" />
                                 </div>
                                 <div class="col-lg-6">
                                     <label for="name">Date de naissance</label>
