@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le :  lun. 29 juin 2020 à 12:30
+-- Généré le :  lun. 06 juil. 2020 à 11:15
 -- Version du serveur :  5.5.55-0+deb8u1
 -- Version de PHP :  7.3.0-2+0~20181217092615.24+jessie~1.gbp54e52f
 
@@ -72,7 +72,15 @@ CREATE TABLE `adherent` (
 --
 
 INSERT INTO `adherent` (`IdAdherent`, `Nom`, `Prenom`, `DNaiss`, `Adresse1`, `Adresse2`, `CdPost`, `Ville`, `Email`, `Tel`, `DAdhesion`, `Organisateur`, `Login`, `Password`, `certificat`, `droit_image`, `cylindree`) VALUES
-(0, 'test nom', 'test prenom', '1980-01-22', 'test adresse', NULL, 'Test ', 'test ville', 'test@test.com', 'test tel', '0000-00-00', NULL, 'test identifiant', 'test password', '1', 1, '250 cm3');
+(1, 'Martin', 'Robert', '1980-01-22', 'test adresse', NULL, 'Test ', 'test ville', 'test@test.com', 'test tel', '0000-00-00', NULL, 'test identifiant', 'test password', '1', 1, '250 cm3'),
+(4, 'Atiff', 'Jean', '1980-01-22', 'test adresse', NULL, 'Test ', 'test ville', 'test@test.com', 'test tel', '0000-00-00', NULL, 'test identifiant', 'test password', '1', 1, '250 cm3'),
+(8, 'test nom', 'Isabelle', '1980-01-22', 'test adresse', NULL, 'Test ', 'test ville', 'test@test.com', 'test tel', '0000-00-00', NULL, 'Isadu48', 'test password', '1', 1, '> 250 cm3'),
+(11, 'test nom', 'test prenom', '1980-01-22', 'test adresse', NULL, 'Test ', 'test ville', 'test@test.com', 'test tel', '0000-00-00', NULL, 'test identifiant', 'test password', '1', 1, ''),
+(12, 'test nom', 'test prenom', '1980-01-22', 'test adresse', NULL, 'Test ', 'test ville', 'test@test.com', 'test tel', '0000-00-00', NULL, 'test identifiant', 'test password', '1', 1, ''),
+(13, 'test nom', 'test prenom', '1980-01-22', 'test adresse', NULL, 'Test ', 'test ville', 'test@test.com', 'test tel', '0000-00-00', NULL, 'test identifiant', 'test password', '1', 1, ''),
+(14, 'test nom', 'test prenom', '1980-01-22', 'test adresse', NULL, 'Test ', 'test ville', 'test@test.com', 'test tel', '0000-00-00', NULL, 'test identifiant', 'test password', '1', 1, ''),
+(15, 'test nom', 'test prenom', '1980-01-22', 'test adresse', NULL, 'Test ', 'test ville', 'test@test.com', 'test tel', '0000-00-00', NULL, 'test identifiant', 'test password', '1', 1, ''),
+(16, 'test nom', 'test prenom', '1980-01-22', 'test adresse', NULL, 'Test ', 'test ville', 'test@test.com', 'test tel', '0000-00-00', NULL, 'test identifiant', 'test password', '1', 1, '');
 
 -- --------------------------------------------------------
 
@@ -130,7 +138,9 @@ INSERT INTO `page` (`id_page`, `key_file`, `metatitle`, `metadescription`, `keyw
 (4, 'galerie', 'Moto Club Millau Passion | Notre Galerie Photo', 'Les activités de l\'association Moto Club Millau Passion', '', 'Galerie', 'Galerie Photo'),
 (5, 'informations', 'Moto Club Millau Passion | Les informations de l\'association', '', '', 'Informations', 'Informations'),
 (6, 'presentation', 'Moto Club Millau Passion | Présentation et histoire de l\'association', '', '', 'Présentation', 'Présentation'),
-(7, 'inscription', 'Moto Club Millau Passion | Inscription', 'description de la page', '', 'Inscription', 'Inscription');
+(7, 'inscription', 'Moto Club Millau Passion | Inscription', 'description de la page', '', 'Inscription', 'Inscription'),
+(8, 'membres', 'Page des membres', '', '', 'Liste des membres', ''),
+(9, 'profil', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -215,10 +225,16 @@ ALTER TABLE `type_activite`
 --
 
 --
+-- AUTO_INCREMENT pour la table `adherent`
+--
+ALTER TABLE `adherent`
+  MODIFY `IdAdherent` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
 -- AUTO_INCREMENT pour la table `page`
 --
 ALTER TABLE `page`
-  MODIFY `id_page` smallint(4) NOT NULL AUTO_INCREMENT COMMENT 'ID de page', AUTO_INCREMENT=8;
+  MODIFY `id_page` smallint(4) NOT NULL AUTO_INCREMENT COMMENT 'ID de page', AUTO_INCREMENT=10;
 
 --
 -- Contraintes pour les tables déchargées
