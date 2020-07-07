@@ -54,6 +54,9 @@
 
 <!-- Js Plugins -->
 <script src="js/jquery-3.3.1.min.js"></script>
+<!-- Mes plugins Plugins -->
+<script src="js/popper.1-12-9.min.js"></script>
+<!-- -->
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.magnific-popup.min.js"></script>
 <script src="js/mixitup.min.js"></script>

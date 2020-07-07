@@ -99,6 +99,10 @@ if(!empty($_POST)){
                             $_SESSION['nom'] = $nom;
                             $_SESSION['prenom'] = $prenom;
 
+                            //ou 2 si admin (to be continued)
+                            $mode_level = 1;
+                            $_SESSION['mode_level'] = $mode_level;
+
                             $message_modal = "Bravo ".$prenom." ".$nom." vous êtes connecté!";
 
                         }

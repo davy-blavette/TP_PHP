@@ -7,6 +7,7 @@ $bdd = new PDO(
     'xxxxxxxxxxx');
 
 
+
 //Server local dev
 $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -14,6 +15,16 @@ $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 //valeur par default
 $page = 'accueil';
 $message_modal = '';
+$mode_level = 0;
+
+/* level = 0 = non-connecté */
+/* level = 1 = connecté */
+/* level = 2 = connecté admin */
+
+if(isset($_SESSION['mode_level'])){
+    $mode_level = $_SESSION['mode_level'];
+}
+
 
 /*
 $bdd = new PDO(

@@ -144,7 +144,7 @@
     --------------------*/
 
     //On gere les boutons qui ferme/cache la modal
-    $('#my-modal .modal-footer .btn, #my-modal .close').on('click', function(){
+    $('#my-modal .modal-footer button, #my-modal .close').on('click', function(){
 
 
         $("#my-modal").hide();

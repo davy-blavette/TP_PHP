@@ -15,7 +15,7 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <label for="name">Identifiant</label>
-                                    <input type="text" id="login" name="login" value="<?php echo isset($identifiant) ? $identifiant : 'test identifiant' ?>" placeholder="" />
+                                    <input type="text" id="login" name="login" value="<?php echo isset($identifiant) ? $identifiant : 'login'.time() ?>" placeholder="" />
                                 </div>
                                 <div class="col-lg-6">
                                     <label for="name">Mot de passe</label>

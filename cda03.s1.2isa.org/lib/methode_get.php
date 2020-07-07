@@ -36,8 +36,20 @@ if(isset($_GET['page']) && !empty($_GET['page']) ){
     //securité - Fail include
     if(array_key_exists($_GET['page'], $ar_pages_var)){
 
+        $page_level = $ar_pages_var[$_GET['page']]['mode_level'];
+
         //parametre de page
-        $page = $_GET['page'];
+        //verification du niveau de securité de l'affichage de page
+
+        //test level de pages
+        var_dump($mode_level.' > '.$page_level);
+
+        //est-ce que la page level (droit d'affichage de la page) est ok ?
+        //sinon $page reste accueil
+        if($mode_level >=  $page_level){
+            $page = $_GET['page'];
+        }
+
 
 
         //test sur les action de page
@@ -76,6 +88,7 @@ if(isset($_GET['page']) && !empty($_GET['page']) ){
 $title = $ar_pages_var[$page]['metatitle'];
 $metadescription = $ar_pages_var[$page]['metadescription'];
 $keywords = $ar_pages_var[$page]['keywords'];
+
 
 
 

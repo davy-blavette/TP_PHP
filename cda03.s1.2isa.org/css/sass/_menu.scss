@@ -1,5 +1,37 @@
-#menu{
+.header-section{
 
+  .nav-menu{
 
+    .mainmenu {
+      margin-top: 30px;
+    }
 
+    .dropdown{
+      float: right;
+      a{
+
+        position: relative;
+
+        &:hover:after{
+          opacity: 1;
+        }
+
+        &:after{
+          position: absolute;
+          left: 10%;
+          bottom: 0px;
+          width: 80%;
+          height: 2px;
+          background: #f15d44;
+          content: "";
+          opacity: 0;
+          -webkit-transition: all 0.3s;
+          -o-transition: all 0.3s;
+          transition: all 0.3s;
+
+        }
+      }
+    }
+
+  }
 }
