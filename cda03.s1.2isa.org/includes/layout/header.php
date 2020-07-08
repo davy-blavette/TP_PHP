@@ -52,14 +52,14 @@
                     <li class="<?php echo $page == 'informations' ? 'active' : ''; ?>"><a href="./index.php?page=informations">Informations</a></li>
                     <li class="<?php echo $page == 'galerie' ? 'active' : ''; ?>"><a href="./index.php?page=galerie">Galerie Photo</a></li>
                     <li class="<?php echo $page == 'contact' ? 'active' : ''; ?>"><a href="./index.php?page=contact">Contacts</a></li>
-                    <?php if($mode_level == 0){ ?>
+                    <?php if($user_level == 0){ ?>
                         <li class="<?php echo $page == 'connexion' ? 'active' : ''; ?>"><a href="./index.php?page=connexion">Connexion</a></li>
                     <?php } ?>
 
                 </ul>
             </nav>
 
-            <?php if($mode_level > 0){ ?>
+            <?php if($user_level > 0){ ?>
 
                 <div class="dropdown">
                     <button class="primary-btn signup-btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

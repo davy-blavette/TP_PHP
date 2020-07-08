@@ -36,21 +36,61 @@ if(isset($_GET['page']) && !empty($_GET['page']) ){
     //securité - Fail include
     if(array_key_exists($_GET['page'], $ar_pages_var)){
 
-        $page_level = $ar_pages_var[$_GET['page']]['mode_level'];
+        $page_level = $ar_pages_var[$_GET['page']]['page_level'];
 
         //parametre de page
         //verification du niveau de securité de l'affichage de page
 
         //test level de pages
-        var_dump($mode_level.' > '.$page_level);
+        //var_dump($mode_level.' > '.$page_level);
 
         //est-ce que la page level (droit d'affichage de la page) est ok ?
         //sinon $page reste accueil
-        if($mode_level >=  $page_level){
+        if($user_level >=  $page_level){
             $page = $_GET['page'];
         }
 
 
+        if($page == 'profil'){
+
+            if(isset($_GET['id']) && !empty($_GET['id'])){
+
+                //je verifie soit admin soit l'utilisateur qui accede à son profil profil
+                if($_SESSION['id_adherent'] == $_GET['id'] || $user_level == 2){
+
+                    //la requete de la table page
+                    $reponse = $bdd->query('SELECT * FROM adherent WHERE IdAdherent = '.$_GET['id']);
+
+
+                    //boucle les données récupérées
+                    while ($donnees = $reponse->fetch()) {
+
+                        $identifiant = $donnees['Login'];
+                        $nom = $donnees['Nom'];
+                        $prenom = $donnees['Prenom'];
+                        $login = $donnees['Login'];
+                        $cylindree = $donnees['cylindree'];
+                        //to be continued
+
+                    }
+
+                    //je transforme le H1 prévu coté BD
+                    $ar_pages_var[$page]['h1'] = $prenom.' '.$nom;
+                    $id = $_GET['id'];
+
+                    $title_register = 'Mise à jour de votre profil';
+                    $btn_register = 'Mettre à jour';
+                    $action = 'update_profil';
+
+                }else{
+
+                    $page = 'accueil';       
+
+                }
+
+            }
+
+        }
 
         //test sur les action de page
         if(isset($_GET['action']) && !empty($_GET['action'])){
@@ -64,18 +104,24 @@ if(isset($_GET['page']) && !empty($_GET['page']) ){
                     //est-ce que c'est sur la page membre ?
                     if($page == 'membres'){
 
+                        if($user_level == 2){
                         //lancement de la requete
                         $bdd->query('DELETE FROM adherent WHERE IdAdherent = '.$_GET['id']);
 
                         //information modal html
                         $message_modal = 'Utilisateur '.$_GET['id'].' supprimé.';
 
+                        }else{
+
+                            $message_modal = 'Vous n\'êtes pas authorisé à réaliser cette action.';
+
+                        }
+
                     }else if($page == 'activites'){
                         //ici le code pour gérer les suppressions des activités
 
 
                     }
-
                 }
             }
         }

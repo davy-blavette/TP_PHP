@@ -18,7 +18,8 @@ if(!empty($_POST)){
 
 
             }else{
-                //verifier unicité du login ? - TP véridier unicité du login et gerer la modal
+                //verifier unicité du login ? - TP vérifier unicité du login et gerer la modal -> Login déja pris ?
+                //quel algo à réaliser ?
 
                 $query = 'INSERT INTO adherent(
             Login,
@@ -81,8 +82,9 @@ if(!empty($_POST)){
                 //je teste si j'ai des données dans les $_POST
                 if (!empty($_POST['login']) and !empty($_POST['password'])) {
 
-                    $query = 'SELECT IdAdherent, Nom, Prenom FROM adherent WHERE Login = "'. $_POST['login'] . '" AND Password = "' . $_POST['password'] . '"';
+                    $query = 'SELECT IdAdherent, Nom, Prenom, Admin FROM adherent WHERE Login = "'. $_POST['login'] . '" AND Password = "' . $_POST['password'] . '"';
 
+                    //lancement de la requete
                     $reponse = $bdd->query($query);
 
                     //permet de déterminer le nombre d'enregistrement
@@ -94,14 +96,17 @@ if(!empty($_POST)){
                             $nom = $donnees['Nom'];
                             $prenom = $donnees['Prenom'];
 
-
+                            //mes variables de session que je compléte
                             $_SESSION['id_adherent'] =  $donnees['IdAdherent'];
                             $_SESSION['nom'] = $nom;
                             $_SESSION['prenom'] = $prenom;
 
                             //ou 2 si admin (to be continued)
-                            $mode_level = 1;
-                            $_SESSION['mode_level'] = $mode_level;
+                            $user_level = 1;
+                            if($donnees['Admin'] == 1){
+                                $user_level = 2;
+                            }
+                            $_SESSION['user_level'] = $user_level;
 
                             $message_modal = "Bravo ".$prenom." ".$nom." vous êtes connecté!";
 
