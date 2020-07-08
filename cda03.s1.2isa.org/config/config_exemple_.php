@@ -15,14 +15,14 @@ $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 //valeur par default
 $page = 'accueil';
 $message_modal = '';
-$mode_level = 0;
+$user_level = 0;
 
-/* level = 0 = non-connecté */
-/* level = 1 = connecté */
-/* level = 2 = connecté admin */
+/* level = 0 = User non-connecté */
+/* level = 1 = User connecté */
+/* level = 2 = User connecté admin */
 
-if(isset($_SESSION['mode_level'])){
-    $mode_level = $_SESSION['mode_level'];
+if(isset($_SESSION['user_level'])){
+    $user_level = $_SESSION['user_level'];
 }
 
 
