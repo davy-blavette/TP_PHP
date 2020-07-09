@@ -110,6 +110,9 @@ if(!empty($_POST)){
 
                             $message_modal = "Bravo ".$prenom." ".$nom." vous êtes connecté!";
 
+                            //retour page par default
+                            $page = $homepage;
+
                         }
 
                     } else {

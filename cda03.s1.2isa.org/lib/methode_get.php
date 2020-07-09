@@ -50,7 +50,7 @@ if(isset($_GET['page']) && !empty($_GET['page']) ){
             $page = $_GET['page'];
         }
 
-
+        //gestion des pages
         if($page == 'profil'){
 
             if(isset($_GET['id']) && !empty($_GET['id'])){
@@ -84,11 +84,26 @@ if(isset($_GET['page']) && !empty($_GET['page']) ){
 
                 }else{
 
-                    $page = 'accueil';
+                    //retour page par default
+                    $page = $homepage;
 
                 }
 
             }
+
+        }else if($page == 'informations'){
+
+            if(isset($_GET['action']) && !empty($_GET['action'])){
+
+                if($_GET['action'] == 'add'){
+
+                    $wysiwyg = true;
+
+                }
+
+            }
+
+            //$message_modal = test(10,20);
 
         }
 
@@ -134,6 +149,20 @@ if(isset($_GET['page']) && !empty($_GET['page']) ){
 $title = $ar_pages_var[$page]['metatitle'];
 $metadescription = $ar_pages_var[$page]['metadescription'];
 $keywords = $ar_pages_var[$page]['keywords'];
+
+
+//exemple fonction PHP - TP a proposer optimiser le code de la methode $_GET ?
+//$message_modal = test(10,20);
+
+function test($var1, $var2){
+
+    $var1 += 1;
+    $var2 += $var1;
+
+    return 'hello function : v1 ='. $var1.' - v2 = '.$var2;
+
+}
+
 
 
 

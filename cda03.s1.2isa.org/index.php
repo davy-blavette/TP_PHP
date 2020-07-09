@@ -6,14 +6,15 @@ session_start();
 include('./config/config.php');
 
 
+//Gestion des données URL type $_GET
+//Affichage des pages
+include('./lib/methode_get.php');
 
 //mes librairies PHP
 //Gestion des formulaire type $_POST
 include('./lib/methode_post.php');
 
-//Gestion des données URL type $_GET
-//Affichage des pages
-include('./lib/methode_get.php');
+
 
 //var_dump() - pour afficher les informations de variable
 //var_dump($_GET['page']);

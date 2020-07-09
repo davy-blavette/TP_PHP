@@ -62,6 +62,9 @@
 <script src="js/mixitup.min.js"></script>
 <script src="js/jquery.slicknav.js"></script>
 <script src="js/owl.carousel.min.js"></script>
+<script src="./vendor/summernote-0.8.18-dist/summernote.min.js"></script>
+
+<!-- Mon code Jquery ici -->
 <script src="js/main.js?v=1.<?php echo time() ?>"></script>
 </body>
 

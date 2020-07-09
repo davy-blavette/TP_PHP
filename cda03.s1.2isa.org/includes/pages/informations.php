@@ -103,6 +103,11 @@
         </div>
     </section>
     <!-- Blog Section End -->
+    <?php
+    if($user_level == 2 && $wysiwyg == true){
+        include('./includes/tmpl/wysiwyg.php');
+    }
+    ?>
 
 
 </main>

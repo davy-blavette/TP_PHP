@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="./css/magnific-popup.css" type="text/css">
     <link rel="stylesheet" href="./css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="./css/style.css" type="text/css">
+    <link rel="stylesheet" href="./vendor/summernote-0.8.18-dist/summernote.min.css" type="text/css">
 
     <!-- Mon fichier Css Styles -->
     <link rel="stylesheet" href="./css/main.css?v=1.<?php echo time() ?>" type="text/css">
@@ -68,6 +69,10 @@
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item" href="./index.php?page=profil&id=<?php echo $_SESSION['id_adherent'] ?>" class="primary-btn signup-btn">Mon profil</a>
                         <a class="dropdown-item" href="./index.php?page=membres">Liste des membres</a>
+                        <!-- //uniquement pour l'admin -->
+                        <?php if($user_level == 2){ ?>
+                        <a class="dropdown-item" href="./index.php?page=informations&action=add">Ajouté News</a>
+                        <?php } ?>
                         <a class="dropdown-item" href="./index.php?deconnexion=1">Deconnexion <span class="fa fa-sign-out"></span></a>
                     </div>
                 </div>
