@@ -2,19 +2,19 @@
 
 //Server SGBD OVH
 $bdd = new PDO(
-    'mysql:host=cda03.2isa.org;dbname=cda03_bd1;charset=utf8',
-    'cda03',
-    'xxxxxxxxxxx');
-
-
+    'mysql:host=37.187.114.142;dbname=cda03_bd1;charset=utf8',
+    'xxx',
+    'xxxxx');
 
 //Server local dev
 $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 //Initialisation des variables
 //valeur par default
-$page = 'accueil';
+$homepage = 'accueil';
+$page = $homepage;
 $message_modal = '';
+$wysiwyg = false;
 $user_level = 0;
 
 /* level = 0 = User non-connecté */

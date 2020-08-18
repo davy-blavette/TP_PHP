@@ -171,7 +171,6 @@
 
     $('.wysiwyg .primary-btn').on('click', function(){
 
-
         console.log('btn wysiwyg ready !');
         var description = $('#summernote').summernote('code');
 

@@ -71,7 +71,7 @@
                         <a class="dropdown-item" href="./index.php?page=membres">Liste des membres</a>
                         <!-- //uniquement pour l'admin -->
                         <?php if($user_level == 2){ ?>
-                        <a class="dropdown-item" href="./index.php?page=informations&action=add">Ajouté News</a>
+                        <a class="dropdown-item" href="./index.php?page=informations&action=add">Ajouter News</a>
                         <?php } ?>
                         <a class="dropdown-item" href="./index.php?deconnexion=1">Deconnexion <span class="fa fa-sign-out"></span></a>
                     </div>
