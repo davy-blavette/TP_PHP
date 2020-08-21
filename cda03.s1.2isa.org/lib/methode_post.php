@@ -16,7 +16,6 @@ if(!empty($_POST)){
 
                 $message_modal = 'Vous devez saisir un nom et un prénom.';
 
-
             }else{
                 //verifier unicité du login ? - TP vérifier unicité du login et gerer la modal -> Login déja pris ?
                 //quel algo à réaliser ?

@@ -12,12 +12,12 @@ if(isset($_GET['deconnexion']) && $_GET['deconnexion'] == 1){
 }
 
 
-//la requete de la table page
-$reponse = $bdd->query('SELECT * FROM page');
 
 //Initialisation de la variable tableau array() PHP
 $ar_pages_var = array();
 
+//la requete de la table page
+$reponse = $bdd->query('SELECT *  FROM page');
 
 //boucle les données récupérées
 while ($donnees = $reponse->fetch()) {
@@ -26,6 +26,28 @@ while ($donnees = $reponse->fetch()) {
     $ar_pages_var[$donnees['key_file']] = $donnees;
 
 }
+
+/*
+ * exemple de construction d'un tableau en PHP
+var_dump($ar_pages_var);
+
+array{
+    array{
+        array{
+            key/index : valeur, //PHP key => valeur
+        }
+    },
+    array{
+        array{
+
+        }
+    }
+}
+
+$ar_pages_var['acceuil'] = array('id_page' => 1, 'key_file' => 'acceuil');
+$ar_pages_var['activites'] = array('id_page' => 2, 'key_file' => 'activites');
+*/
+
 
 
 //Superglobal $_GET -> récupération de l'information de l'URL ?page=presentation
