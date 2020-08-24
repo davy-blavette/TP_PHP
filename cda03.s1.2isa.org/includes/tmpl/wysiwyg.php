@@ -1,4 +1,10 @@
 <section class="wysiwyg">
+
+    <div>
+        <label>Titre de la news :</label>
+        <input type="text" name="title" value="" />
+    </div>
+
     <div class="container">
         <div class="row single-blog-item">
             <div class="col-12">
@@ -7,7 +13,7 @@
         </div>
         <div class="row single-blog-item">
             <div class="col-12 text-right">
-                <a href="#" class="primary-btn">Information</a>
+                <a href="#" class="primary-btn">Ajouter News</a>
             </div>
         </div>
     </div>

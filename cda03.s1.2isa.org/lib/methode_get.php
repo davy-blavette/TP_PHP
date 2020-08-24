@@ -127,6 +127,41 @@ if(isset($_GET['page']) && !empty($_GET['page']) ){
 
             //$message_modal = test(10,20);
 
+        }else if($page == 'information'){
+
+            if(isset($_GET['id']) && !empty($_GET['id'])){
+
+
+                    //la requete de la table page
+                    $reponse = $bdd->query('SELECT * FROM nouvelle WHERE IdNouvelle = '.$_GET['id']);
+
+
+                    //boucle les données récupérées
+                    while ($donnees = $reponse->fetch()) {
+
+                        $title = $donnees['Titre'];
+                        $introduction = $donnees['Introduction'];
+                        $description = $donnees['Texte'];
+
+
+                    }
+
+                    //je transforme le H1 prévu coté BD
+                    $ar_pages_var[$page]['h1'] = $title;
+                    $id = $_GET['id'];
+
+                    //a voir plus tard pour update news ?
+                    $title_register = 'Mise à jour de votre profil';
+                    $btn_register = 'Mettre à jour';
+                    $action = 'update_profil';
+
+                }else{
+
+                    //retour page par default
+                    $page = $homepage;
+
+                }
+
         }
 
         //test sur les action de page

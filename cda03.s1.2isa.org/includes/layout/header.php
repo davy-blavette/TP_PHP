@@ -60,6 +60,7 @@
                 </ul>
             </nav>
 
+            <!-- Affichage menu connecté -->
             <?php if($user_level > 0){ ?>
 
                 <div class="dropdown">

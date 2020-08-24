@@ -15,8 +15,10 @@ if($user_level == 2){
             if(isset($_POST['description']) && !empty($_POST['description'])){
 
             $query = 'INSERT INTO nouvelle(
-                Texte
+                Titre,
+                Texte                
                 ) VALUES (
+                "'.$_POST["title"].'",
                 "'.$_POST["description"].'"            
             )';
 

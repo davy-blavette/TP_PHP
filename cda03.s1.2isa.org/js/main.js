@@ -173,13 +173,14 @@
 
         console.log('btn wysiwyg ready !');
         var description = $('#summernote').summernote('code');
+        var title = $('.wysiwyg input[name=title]').val();
 
         //methode Ajax
         var request = $.ajax({
             url: "./lib/methode_ajax.php",
             method: "POST",
-            data: { informations : 1, description : description },
-            dataType: "html"
+            data: { informations : 1, title:title, description : description },
+            dataType: "html" //ou JSON
         });
 
         //reussite reponse 200 - Inclu le fait que vous avez pas les permissions requisent
@@ -187,6 +188,9 @@
             //console.log(msg);
             //afichage de la modal ave
             $('#my-modal .modal-body p').html(msg);
+
+            $('')
+
             $("#my-modal").show();
             //$( "#log" ).html( msg );
         });
