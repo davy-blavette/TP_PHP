@@ -45,9 +45,26 @@
                     </div>
                 </div>
             </div>
+            </div>
+        <?php if($user_level == 2){ ?>
+            <form action="./index.php?page=information&id=<?php echo $id; ?>" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="formulaire" value="update_news" />
+                <input type="hidden" name="IdNouvelle" value="<?php echo $id; ?>" />
+                <label>Changer image</label>
+                <input type="file" name="image" />
+
+                <div class="row single-blog-item">
+                    <div class="col-12 text-center">
+                        <input type="submit" class="primary-btn" value="Modifier News">
+                    </div>
+                </div>
+            </form>
+
+        <?php } ?>
         </div>
+
+
     </section>
     <!-- Blog Details Section End -->
-
 
 </main>

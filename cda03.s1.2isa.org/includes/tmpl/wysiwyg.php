@@ -2,7 +2,7 @@
 
     <div>
         <label>Titre de la news :</label>
-        <input type="text" name="title" value="" />
+        <input type="text" name="title" placeholder="Ajouter titre" value="" />
     </div>
 
     <div class="container">

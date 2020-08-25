@@ -180,16 +180,16 @@
             url: "./lib/methode_ajax.php",
             method: "POST",
             data: { informations : 1, title:title, description : description },
-            dataType: "html" //ou JSON
+            dataType: "json" //ou JSON
         });
 
         //reussite reponse 200 - Inclu le fait que vous avez pas les permissions requisent
         request.done(function( msg ) {
             //console.log(msg);
             //afichage de la modal ave
-            $('#my-modal .modal-body p').html(msg);
+            $('#my-modal .modal-body p').html(msg.modal);
 
-            $('')
+            $('#news_breadcrumb').append(msg.tmpl);
 
             $("#my-modal").show();
             //$( "#log" ).html( msg );

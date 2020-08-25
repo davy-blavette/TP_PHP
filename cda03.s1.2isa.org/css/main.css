@@ -49,6 +49,11 @@
   transition: all 0.3s;
 }
 
+/* line 1, D:/dev/www/CDA03/GIT/Formation/cda03/cda03.s1.2isa.org/css/sass/_form.scss */
+input[type="submit"] {
+  background-color: #f67831;
+}
+
 /* line 1, D:/dev/www/CDA03/GIT/Formation/cda03/cda03.s1.2isa.org/css/sass/_button.scss */
 button {
   border: none;

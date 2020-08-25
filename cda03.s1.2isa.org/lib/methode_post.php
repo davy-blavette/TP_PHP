@@ -2,9 +2,9 @@
 //test de la super global $_POST si elle n'est pas vide '!empty()'
 if(!empty($_POST)){
 
-    if (isset($_POST['formulaire'])){
+    if (isset($_POST['formulaire'])) {
 
-        if($_POST['formulaire'] == 'register'){
+        if ($_POST['formulaire'] == 'register') {
 
             //var_dump($_POST);
 
@@ -12,11 +12,11 @@ if(!empty($_POST)){
             $droit_image = $_POST["droit_image"] == 'on' ? 1 : 0;
             $cylindree = isset($_POST["cylindree"]) && !empty($cylindree) ? $_POST["cylindree"] : '';
 
-            if(empty($_POST["nom"]) || empty($_POST["prenom"])){
+            if (empty($_POST["nom"]) || empty($_POST["prenom"])) {
 
                 $message_modal = 'Vous devez saisir un nom et un prénom.';
 
-            }else{
+            } else {
                 //verifier unicité du login ? - TP vérifier unicité du login et gerer la modal -> Login déja pris ?
                 //quel algo à réaliser ?
 
@@ -35,19 +35,19 @@ if(!empty($_POST)){
             droit_image,
             cylindree
             ) VALUES (
-            "'.$_POST["login"].'",
-            "'.$_POST["password"].'",
-            "'.$_POST["nom"].'",
-            "'.$_POST["prenom"].'",
-            "'.$_POST["dnaiss"].'",
-            "'.$_POST["adresse1"].'",
-            "'.$_POST["cdpost"].'",
-            "'.$_POST["ville"].'",
-            "'.$_POST["email"].'",
-            "'.$_POST["tel"].'",
+            "' . $_POST["login"] . '",
+            "' . $_POST["password"] . '",
+            "' . $_POST["nom"] . '",
+            "' . $_POST["prenom"] . '",
+            "' . $_POST["dnaiss"] . '",
+            "' . $_POST["adresse1"] . '",
+            "' . $_POST["cdpost"] . '",
+            "' . $_POST["ville"] . '",
+            "' . $_POST["email"] . '",
+            "' . $_POST["tel"] . '",
             1,
-            '.$droit_image.',
-            "'.$cylindree.'"
+            ' . $droit_image . ',
+            "' . $cylindree . '"
             )';
 
                 //echo "Query : ".$query;
@@ -59,20 +59,75 @@ if(!empty($_POST)){
             }
 
 
-
-        }else if($_POST['formulaire'] == 'update_profil'){
+        } else if ($_POST['formulaire'] == 'update_profil') {
 
             $query = 'UPDATE adherent SET 
-              Login = "'.$_POST["login"].'",
-              Prenom = "'.$_POST["prenom"].'",
-              cylindree = "'.$_POST["cylindree"].'"
-              WHERE IdAdherent = '.$_POST["IdAdherent"];
+              Login = "' . $_POST["login"] . '",
+              Prenom = "' . $_POST["prenom"] . '",
+              cylindree = "' . $_POST["cylindree"] . '"
+              WHERE IdAdherent = ' . $_POST["IdAdherent"];
 
             //execution de la requete
             $bdd->query($query);
 
             //information modal html
             $message_modal = 'Votre profil est mis à jour.';
+
+        }else if ($_POST['formulaire'] == 'update_news') {
+
+            if(isset($_FILES['image'])) {
+
+                //les différentes clef de $_FILES
+                $fileName = $_FILES['image']['name']; //01.02.JPG
+                $fileType = $_FILES['image']['type'];//type de fichier dans l'entete du fichier = manipulable
+                $fileTmp = $_FILES['image']['tmp_name'];//nom temporaire du fichier sur le serveur APACHE avant traitement
+                $fileError = $_FILES['image']['error'];
+                $fileSize = $_FILES['image']['size'];
+
+                //mes variable de config
+                $limitSize = 2097152;//votre limitte d'acception de la taille du fichier
+                $directory = "./img/upload/news/";
+                $validExtention = array('png', 'jpeg', 'jpg', 'gif');
+
+                //Trouver l'extention du fichier
+                $nameArray = explode(".", $fileName); //array("01","JGP") -> 2 élements
+                $lastIndex = count($nameArray) - 1;//total des éléments (2) mais je veux trouver le dernier index
+                //array[0] = "01"
+                //array[1] = "JPG"
+                $extention = strtolower($nameArray[$lastIndex]);//deux elements dans le tb, mais -1 pour l'index du dernier element car index commence a zero
+
+                //est-ce que l'extention est dans le tableau de mes extentions
+                if (in_array($extention, $validExtention)) {
+
+                    //nom de mon fichier
+                    $photoName = time() . "." . $extention;
+
+                    //la limite est elle valide ?
+                    if ($limitSize > $fileSize) {
+                        $message_modal = "upload";
+
+                        //fonction d'upload sur le serveur
+                        move_uploaded_file($fileTmp, $directory . $photoName);
+
+                        //requete d'insertion dans la BD
+                        $query = 'UPDATE nouvelle SET 
+                          Image = "' . $photoName . '"
+                          WHERE IdNouvelle = ' . $_POST["IdNouvelle"];
+                        $bdd->query($query);
+
+                    } else {
+
+                        $message_modal = "extention non valide";
+
+                    }
+
+
+                } else {
+
+                    $message_modal = "Fichier trop gros (" . ($limitSize / 1000000) . " Mo max)";
+
+                }
+            }
 
         }else if($_POST['formulaire'] == 'connexion'){
 
