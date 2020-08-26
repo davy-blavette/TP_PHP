@@ -180,7 +180,7 @@
             url: "./lib/methode_ajax.php",
             method: "POST",
             data: { informations : 1, title:title, description : description },
-            dataType: "json" //ou JSON
+            dataType: "json" //JSON = reponse attendu en array() ou HTML, reponse de type string
         });
 
         //reussite reponse 200 - Inclu le fait que vous avez pas les permissions requisent

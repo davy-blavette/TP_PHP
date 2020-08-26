@@ -86,7 +86,7 @@ if(!empty($_POST)){
 
                 //mes variable de config
                 $limitSize = 2097152;//votre limitte d'acception de la taille du fichier
-                $directory = "./img/upload/news/";
+
                 $validExtention = array('png', 'jpeg', 'jpg', 'gif');
 
                 //Trouver l'extention du fichier
@@ -104,16 +104,18 @@ if(!empty($_POST)){
 
                     //la limite est elle valide ?
                     if ($limitSize > $fileSize) {
-                        $message_modal = "upload";
+
 
                         //fonction d'upload sur le serveur
-                        move_uploaded_file($fileTmp, $directory . $photoName);
+                        move_uploaded_file($fileTmp, $directory_img_news . $photoName);
 
                         //requete d'insertion dans la BD
                         $query = 'UPDATE nouvelle SET 
                           Image = "' . $photoName . '"
                           WHERE IdNouvelle = ' . $_POST["IdNouvelle"];
                         $bdd->query($query);
+
+                        $message_modal = "News update";
 
                     } else {
 

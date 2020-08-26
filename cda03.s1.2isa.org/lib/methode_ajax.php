@@ -29,10 +29,15 @@ if($user_level == 2){
             $donnees['IdNouvelle']= $bdd->lastInsertId();
             $donnees['Titre'] = $_POST["title"];
 
-            $msg['modal'] = 'Ajout d\'une nouvelle.';
-            $msg['tmpl'] = '<a href="./index.php?page=information&id='.$donnees['IdNouvelle'].'">'.$donnees['Titre'].'</a>';
+            //mise en variable d'un template
+            ob_start();
+            include('../includes/tmpl/news_breadcrumb.php');
+            $tmpl = ob_get_clean();
 
-            //include ('../includes/tmpl/news_breadcrumb.php');
+            $msg['modal'] = 'Ajout d\'une nouvelle.';
+            $msg['tmpl'] = $tmpl;
+
+
 
 
             }
@@ -46,5 +51,5 @@ if($user_level == 2){
     $msg['modal'] = 'Vous n\'etes pas authorisé à appeller cette methode.';
 
 }
-
+//return valeur json/Ajax
 echo json_encode($msg);

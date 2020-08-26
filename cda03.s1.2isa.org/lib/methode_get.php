@@ -142,6 +142,7 @@ if(isset($_GET['page']) && !empty($_GET['page']) ){
                         $title = $donnees['Titre'];
                         $introduction = $donnees['Introduction'];
                         $description = $donnees['Texte'];
+                        $image = $donnees['Image'];
 
 
                     }

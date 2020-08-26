@@ -16,6 +16,13 @@ main{
 
 
   }
-
+  .single-blog-item img {
+    height: 190px;
+  }
+  .bd-text .bd-pic img {
+    min-width: unset;
+    max-width: 290px;
+    width: 100%;
+  }
 
 }

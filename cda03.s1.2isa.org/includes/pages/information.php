@@ -17,8 +17,11 @@
                         </div>
                         <div class="bd-pic">
                             <div class="row">
-                                <div class="col-lg-12">
-                                    <img src="img/blog/bd-1.jpg" alt="">
+                                <div class="col-lg-12 text-center">
+                                    <?php
+                                    $img = !empty($image) ? $image : 'upload_news_detail_default.jpg';
+                                    ?>
+                                    <img src="<?php echo $directory_img_news.$img; ?>" alt="">
                                 </div>
                             </div>
                         </div>

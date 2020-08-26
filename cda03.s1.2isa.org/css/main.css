@@ -70,4 +70,16 @@ main .breadcrumb-text h1 {
   color: #ffffff;
 }
 
+/* line 19, D:/dev/www/CDA03/GIT/Formation/cda03/cda03.s1.2isa.org/css/sass/main.scss */
+main .single-blog-item img {
+  height: 190px;
+}
+
+/* line 22, D:/dev/www/CDA03/GIT/Formation/cda03/cda03.s1.2isa.org/css/sass/main.scss */
+main .bd-text .bd-pic img {
+  min-width: unset;
+  max-width: 290px;
+  width: 100%;
+}
+
 /*# sourceMappingURL=main.css.map */
