@@ -31,11 +31,11 @@
           action : "sendMail",  
           data: {subject: formData.get("subject"), email: formData.get("email"), message: formData.get("message")} 
         },
-      }).done((msg) => {
+      }).done(function(msg){
         alert(msg);
-      }).error(error) =>{
+      }).fail(function(error){
         alert(error);
-      };
+      });
     });
   });
 </script>
