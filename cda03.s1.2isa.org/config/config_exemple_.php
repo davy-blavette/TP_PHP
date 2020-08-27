@@ -17,6 +17,9 @@ $message_modal = '';
 $wysiwyg = false;
 $user_level = 0;
 
+$directory_img_news = "./img/upload/news/";
+$directory_img_profil = "./img/upload/profils/";
+
 /* level = 0 = User non-connecté */
 /* level = 1 = User connecté */
 /* level = 2 = User connecté admin */
