@@ -1,0 +1,16 @@
+#mon fichier statique erreur 404
+ErrorDocument 404 /404.html
+
+#j'active le mode reecriture URL
+RewriteEngine On
+
+#exemple avec une reecriture de type statique
+RewriteRule	^contact	index.php?page=contact	[L]
+RewriteRule	^galerie	index.php?page=galerie	[L]
+
+
+#exemple avec une reecriture de type dynamique
+RewriteRule	^page-([a-z]*)$	index.php?page=$1	[L]
+
+#exemple avec deux arguments (detail d'un article)
+RewriteRule	^page-([a-z]*)-([0-9]*)$	index.php?page=$1&detail=$2	[L]

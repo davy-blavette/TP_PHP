@@ -61,75 +61,59 @@ if(!empty($_POST)){
 
         } else if ($_POST['formulaire'] == 'update_profil') {
 
-            $query = 'UPDATE adherent SET 
-              Login = "' . $_POST["login"] . '",
-              Prenom = "' . $_POST["prenom"] . '",
-              cylindree = "' . $_POST["cylindree"] . '"
-              WHERE IdAdherent = ' . $_POST["IdAdherent"];
+            ///list permet de stocker en variable les valeurs d'un tableau
+            list($error, $message_modal, $photoName, $binary, $fileType) = upload_img($directory_img_profil, 'blob');
 
-            //execution de la requete
-            $bdd->query($query);
+            //equivalen de
+            //$error = $array[0];
+            //$message_modal = $array[1];
 
-            //information modal html
-            $message_modal = 'Votre profil est mis à jour.';
+            if(!$error){
+                /*
+                //requete d'insertion dans la BD
+                $query = 'UPDATE adherent SET 
+                  Login = "' . $_POST["login"] . '",
+                  Prenom = "' . $_POST["prenom"] . '",
+                  cylindree = "' . $_POST["cylindree"] . '",
+                  Avatar = "' . $photoName . '",
+                  Avatar_blob = "' . $binary . '",
+                  Avatar_type = "' . $fileType . '"
+                  WHERE IdAdherent = ' . $_POST["IdAdherent"];
+
+                //execution de la requete
+                $bdd->query($query);
+*/
+                $query = 'UPDATE adherent SET Avatar_blob = ?, Avatar_type = ? WHERE IdAdherent = ?';
+
+                //prepare execute c'est beaucoup mieux, voir injection SQL !
+                $response = $bdd->prepare($query);
+                $result = $response->execute(array($binary, $fileType, $_POST["IdAdherent"]));
+
+
+                //information modal html
+                $message_modal = 'Votre profil est mis à jour.';
+
+            }
+
 
         }else if ($_POST['formulaire'] == 'update_news') {
 
-            if(isset($_FILES['image'])) {
+            ///list permet de stocker en variable les valeurs d'un tableau
+            list($error, $message_modal, $photoName) = upload_img($directory_img_news);
 
-                //les différentes clef de $_FILES
-                $fileName = $_FILES['image']['name']; //01.02.JPG
-                $fileType = $_FILES['image']['type'];//type de fichier dans l'entete du fichier = manipulable
-                $fileTmp = $_FILES['image']['tmp_name'];//nom temporaire du fichier sur le serveur APACHE avant traitement
-                $fileError = $_FILES['image']['error'];
-                $fileSize = $_FILES['image']['size'];
+            //equivalen de
+            //$error = $array[0];
+            //$message_modal = $array[1];
 
-                //mes variable de config
-                $limitSize = 2097152;//votre limitte d'acception de la taille du fichier
+            if(!$error){
+                //requete d'insertion dans la BD
+                $query = 'UPDATE nouvelle SET 
+                                      Image = "' . $photoName . '"
+                                      WHERE IdNouvelle = ' . $_POST["IdNouvelle"];
+                $bdd->query($query);
 
-                $validExtention = array('png', 'jpeg', 'jpg', 'gif');
-
-                //Trouver l'extention du fichier
-                $nameArray = explode(".", $fileName); //array("01","JGP") -> 2 élements
-                $lastIndex = count($nameArray) - 1;//total des éléments (2) mais je veux trouver le dernier index
-                //array[0] = "01"
-                //array[1] = "JPG"
-                $extention = strtolower($nameArray[$lastIndex]);//deux elements dans le tb, mais -1 pour l'index du dernier element car index commence a zero
-
-                //est-ce que l'extention est dans le tableau de mes extentions
-                if (in_array($extention, $validExtention)) {
-
-                    //nom de mon fichier
-                    $photoName = time() . "." . $extention;
-
-                    //la limite est elle valide ?
-                    if ($limitSize > $fileSize) {
-
-
-                        //fonction d'upload sur le serveur
-                        move_uploaded_file($fileTmp, $directory_img_news . $photoName);
-
-                        //requete d'insertion dans la BD
-                        $query = 'UPDATE nouvelle SET 
-                          Image = "' . $photoName . '"
-                          WHERE IdNouvelle = ' . $_POST["IdNouvelle"];
-                        $bdd->query($query);
-
-                        $message_modal = "News update";
-
-                    } else {
-
-                        $message_modal = "extention non valide";
-
-                    }
-
-
-                } else {
-
-                    $message_modal = "Fichier trop gros (" . ($limitSize / 1000000) . " Mo max)";
-
-                }
             }
+
 
         }else if($_POST['formulaire'] == 'connexion'){
 

@@ -1,0 +1,23 @@
+a,
+a:active,
+a:visited{
+    color: black;
+    text-decoration: none;
+}
+a.active{
+    color:darkblue;
+    background: yellow;
+}
+
+
+#accueil{
+    height: 280px;
+    width: 100%;
+    background-image: url(../img/accueil.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.ql-showHtml:after {
+    content: "[source]";
+}

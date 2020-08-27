@@ -92,6 +92,7 @@ if(isset($_GET['page']) && !empty($_GET['page']) ){
                         $prenom = $donnees['Prenom'];
                         $login = $donnees['Login'];
                         $cylindree = $donnees['cylindree'];
+                        $image = $donnees['Avatar'];
                         //to be continued
 
                     }

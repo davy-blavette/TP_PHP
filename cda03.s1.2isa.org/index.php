@@ -5,14 +5,18 @@ session_start();
 //mon fichier config PDO, base de données
 include('./config/config.php');
 
+//mes librairies PHP
+
+//mes fonctions PHP
+include('./lib/functions.php');
+
+//Gestion des formulaire type $_POST
+include('./lib/methode_post.php');
 
 //Gestion des données URL type $_GET
 //Affichage des pages
 include('./lib/methode_get.php');
 
-//mes librairies PHP
-//Gestion des formulaire type $_POST
-include('./lib/methode_post.php');
 
 
 
