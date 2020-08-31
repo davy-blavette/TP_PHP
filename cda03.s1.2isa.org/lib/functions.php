@@ -7,7 +7,7 @@ function upload_img($directory, $methode = 'file'){
     $fileType = '';
     $binary = '';
 
-    if(isset($_FILES['image'])) {
+    if(isset($_FILES['image']) && !empty($_FILES['image'])) {
 
         //les différentes clef de $_FILES
         $fileName = $_FILES['image']['name']; //01.02.JPG
@@ -69,8 +69,23 @@ function upload_img($directory, $methode = 'file'){
     }else{
         $message_modal = "Pas de fichier Upload";
 
+
     }
 
     return array($error, $message_modal, $photoName, $binary, $fileType);
+
+}
+
+//Completer la fonction avec votre propre methode de cryptage sur base sha256 + une boucle, un salt (clé secrete ?)
+function My_Crypt($password){
+
+    //on peut utiliser une boucle pour de 64 et remelanger les lettres ?
+    //on peut ajouter un Salt (un mot secret) a concatener avec pass word ?
+    //puis peut etre creer une fonction decript du salt ?
+    
+
+    return hash ('sha256', $password);
+
+
 
 }

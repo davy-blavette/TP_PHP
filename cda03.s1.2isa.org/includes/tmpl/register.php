@@ -1,5 +1,5 @@
 <!-- Register Section Begin -->
-<section class="register-section classes-page spad">
+<section class="register-section classes-page spad contact-form">
     <form action="./index.php?page=<?php echo $page ?><?php echo isset($id) ? '&id='.$id : ''; ?>" method="post" class="register-form" enctype="multipart/form-data">
         <input type="hidden" name="formulaire" value="<?php echo $action; ?>" />
         <input type="hidden" name="IdAdherent" value="<?php echo isset($id) ? $id : ''; ?>" />
@@ -20,7 +20,7 @@
                                     </div>
                                     <div class="col-lg-6">
                                         <label for="name">Mot de passe</label>
-                                        <input type="password" id="password" name="password" value="test password" placeholder="" />
+                                        <input type="password" id="password" name="password" value="" placeholder="" />
                                     </div>
                                     <div class="col-lg-6">
                                         <label for="name">Prénom</label>
@@ -69,10 +69,6 @@
                                         <label for="mobile">> 250 cm3</label>
                                         <input type="radio" name="cylindree" value="> 250 cm3" <?php echo isset($cylindree) && $cylindree == "> 250 cm3" ? 'checked' : '';  ?>/>
                                     </div>
-                                    <div class="col-lg-6">
-                                        <label for="mobile">Vous acceptez que votre image soit utilisée sur le site internet</label>
-                                        <input type="checkbox" id="droit" name="droit_image" checked />
-                                    </div>
                                 </div>
                         </div>
                     </div>
@@ -86,7 +82,12 @@
                             <input type="file" name="image" />
                         </div>
                     </div>
-                    <div class="col-12">
+                    <div class="col-12 text-center">
+                        <label for="mobile">Vous acceptez que votre image soit utilisée sur le site internet</label>
+                        <input type="checkbox" id="droit" name="droit_image" checked />
+                    </div>
+
+                    <div class="col-12 text-center pb-4">
                         <button type="submit" class="register-btn"><?php echo $btn_register; ?></button>
                     </div>
                 </div>

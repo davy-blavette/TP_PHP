@@ -20,6 +20,9 @@ if(!empty($_POST)){
                 //verifier unicité du login ? - TP vérifier unicité du login et gerer la modal -> Login déja pris ?
                 //quel algo à réaliser ?
 
+                //hash du mot de passe
+                $hashed_password = My_Crypt($_POST["password"]);
+
                 $query = 'INSERT INTO adherent(
             Login,
             Password,
@@ -36,7 +39,7 @@ if(!empty($_POST)){
             cylindree
             ) VALUES (
             "' . $_POST["login"] . '",
-            "' . $_POST["password"] . '",
+            "' . $hashed_password . '",
             "' . $_POST["nom"] . '",
             "' . $_POST["prenom"] . '",
             "' . $_POST["dnaiss"] . '",
@@ -61,34 +64,46 @@ if(!empty($_POST)){
 
         } else if ($_POST['formulaire'] == 'update_profil') {
 
-            ///list permet de stocker en variable les valeurs d'un tableau
-            list($error, $message_modal, $photoName, $binary, $fileType) = upload_img($directory_img_profil, 'blob');
+            if(isset($_FILES['image']) && !empty($_FILES['image'])) {
 
-            //equivalen de
-            //$error = $array[0];
-            //$message_modal = $array[1];
 
-            if(!$error){
-                /*
-                //requete d'insertion dans la BD
+
+                ///list permet de stocker en variable les valeurs d'un tableau
+                list($error, $message_modal, $photoName, $binary, $fileType) = upload_img($directory_img_profil, 'blob');
+
+                //equivalen de
+                //$error = $array[0];
+                //$message_modal = $array[1];
+
+                if(!$error){
+
+                    $query = 'UPDATE adherent SET Avatar_blob = ?, Avatar_type = ? WHERE IdAdherent = ?';
+
+                    //prepare execute c'est beaucoup mieux, voir injection SQL !
+                    $response = $bdd->prepare($query);
+                    $result = $response->execute(array($binary, $fileType, $_POST["IdAdherent"]));
+
+
+                }
+
+                //si pas de nvx password on ne fait pas l'update
+                $pass_string = '';
+
+                if(isset($_POST["password"]) && !empty($_POST["password"])){
+                    $hashed_password = My_Crypt($_POST["password"]);
+                    //complétion de la requete update
+                    $pass_string = 'Password = "' . $hashed_password . '",';
+                }
+
                 $query = 'UPDATE adherent SET 
-                  Login = "' . $_POST["login"] . '",
-                  Prenom = "' . $_POST["prenom"] . '",
-                  cylindree = "' . $_POST["cylindree"] . '",
-                  Avatar = "' . $photoName . '",
-                  Avatar_blob = "' . $binary . '",
-                  Avatar_type = "' . $fileType . '"
-                  WHERE IdAdherent = ' . $_POST["IdAdherent"];
+                      Login = "' . $_POST["login"] . '",                      
+                      '.$pass_string.'
+                      Prenom = "' . $_POST["prenom"] . '",
+                      cylindree = "' . $_POST["cylindree"] . '"
+                      WHERE IdAdherent = ' . $_POST["IdAdherent"];
 
                 //execution de la requete
                 $bdd->query($query);
-*/
-                $query = 'UPDATE adherent SET Avatar_blob = ?, Avatar_type = ? WHERE IdAdherent = ?';
-
-                //prepare execute c'est beaucoup mieux, voir injection SQL !
-                $response = $bdd->prepare($query);
-                $result = $response->execute(array($binary, $fileType, $_POST["IdAdherent"]));
-
 
                 //information modal html
                 $message_modal = 'Votre profil est mis à jour.';
@@ -122,7 +137,9 @@ if(!empty($_POST)){
                 //je teste si j'ai des données dans les $_POST
                 if (!empty($_POST['login']) and !empty($_POST['password'])) {
 
-                    $query = 'SELECT IdAdherent, Nom, Prenom, Admin FROM adherent WHERE Login = "'. $_POST['login'] . '" AND Password = "' . $_POST['password'] . '"';
+                    $hashed_password = My_Crypt($_POST["password"]);
+
+                    $query = 'SELECT IdAdherent, Nom, Prenom, Admin FROM adherent WHERE Login = "'. $_POST['login'] . '" AND Password = "' . $hashed_password . '"';
 
                     //lancement de la requete
                     $reponse = $bdd->query($query);
