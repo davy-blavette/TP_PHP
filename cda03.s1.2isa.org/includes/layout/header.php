@@ -23,6 +23,9 @@
 
     <!-- Mon fichier Css Styles -->
     <link rel="stylesheet" href="./css/main.css?v=1.<?php echo time() ?>" type="text/css">
+    <!-- TP a realiser - generer l'url canonique de toute vos pages -->
+    <!-- voir https://support.google.com/webmasters/answer/139066?hl=fr -->
+    <link rel="canonical" href="http://cda03.s1.2isa.test/page-contact" />
 
 </head>
 
@@ -50,7 +53,7 @@
                     <li class="<?php if($page == 'accueil'){echo 'active';} ?>"><a href="./index.php">Accueil</a></li>
                     <li class="<?php if($page == 'presentation'){echo 'active';} ?>"><a href="./index.php?page=presentation">Présentation</a></li>
                     <li class="<?php echo $page == 'activites' ? 'active' : ''; ?>"><a href="./index.php?page=activites">Activités</a></li>
-                    <li class="<?php echo $page == 'informations' ? 'active' : ''; ?>"><a href="./index.php?page=informations">Informations</a></li>
+                    <li class="<?php echo $page == 'informations' ? 'active' : ''; ?>"><a href="./page-informations">Informations</a></li>
                     <li class="<?php echo $page == 'galerie' ? 'active' : ''; ?>"><a href="./index.php?page=galerie">Galerie Photo</a></li>
                     <li class="<?php echo $page == 'contact' ? 'active' : ''; ?>"><a href="./index.php?page=contact">Contacts</a></li>
                     <?php if($user_level == 0){ ?>
