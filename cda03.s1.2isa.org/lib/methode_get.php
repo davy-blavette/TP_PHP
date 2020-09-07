@@ -179,11 +179,28 @@ if(isset($_GET['page']) && !empty($_GET['page']) ){
                     if($page == 'membres'){
 
                         if($user_level == 2){
-                        //lancement de la requete
-                        $bdd->query('DELETE FROM adherent WHERE IdAdherent = '.$_GET['id']);
 
-                        //information modal html
-                        $message_modal = 'Utilisateur '.$_GET['id'].' supprimé.';
+                            if(isset($_GET['token']) && !empty($_GET['token'])){
+
+                                if($_GET['token'] == $_SESSION['token']){
+
+
+                                    //lancement de la requete
+                                    $bdd->query('DELETE FROM adherent WHERE IdAdherent = '.$_GET['id']);
+
+                                    //information modal html
+                                    $message_modal = 'Utilisateur '.$_GET['id'].' supprimé.';
+
+
+                                }
+
+                            }else{
+                                $token = time();
+                                $_SESSION['token'] = $token;
+                                $message_modal = 'Confirmer suppression ? <a href="index.php?page=membres&action=delete&id='.$_GET['id'].'&token='.$token.'">VALIDER SUPPRESSION</a>';
+
+                            }
+
 
                         }else{
 

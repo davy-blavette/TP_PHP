@@ -1,9 +1,9 @@
 <div class="col-lg-4 col-md-6">
     <div class="single-blog-item">
         <?php
-        $img = !empty($donnees['Image']) ? $donnees['Image'] : 'upload_news_default.jpg';
+        $img = !empty($donnees['Image']) ? $donnees['Image'] : '001.jpg';
         ?>
-        <img src="<?php echo $directory_img_news.$img; ?>" alt="">
+        <img src="<?php echo './img/news/'.$img; ?>" alt="">
         <div class="blog-widget">
             <div class="bw-date">February 17, 2019</div>
             <a href="#" class="tag">#Sport</a>

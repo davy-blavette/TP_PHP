@@ -31,6 +31,7 @@ include('./lib/methode_get.php');
 include('./includes/layout/header.php');
 
 //include du fichier de page reprenant la $page
+//securité array_key_exist & extention en dur
 include('./includes/pages/'.$page.'.php');
 
 include('./includes/layout/footer.php');

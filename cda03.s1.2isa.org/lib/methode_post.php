@@ -23,6 +23,12 @@ if(!empty($_POST)){
                 //hash du mot de passe
                 $hashed_password = My_Crypt($_POST["password"]);
 
+                //clean $_POST;
+                foreach ($_POST as $key => $value){
+
+                    $_POST[$key] = str_replace(array('<','>'),'?', $value);
+                }
+
                 $query = 'INSERT INTO adherent(
             Login,
             Password,
@@ -91,19 +97,20 @@ if(!empty($_POST)){
 
                 if(isset($_POST["password"]) && !empty($_POST["password"])){
                     $hashed_password = My_Crypt($_POST["password"]);
-                    //complétion de la requete update
-                    $pass_string = 'Password = "' . $hashed_password . '",';
+                }else{
+
+                    $hashed_password = $_SESSION['password'];
+
                 }
 
-                $query = 'UPDATE adherent SET 
-                      Login = "' . $_POST["login"] . '",                      
-                      '.$pass_string.'
-                      Prenom = "' . $_POST["prenom"] . '",
-                      cylindree = "' . $_POST["cylindree"] . '"
-                      WHERE IdAdherent = ' . $_POST["IdAdherent"];
+                $query = 'UPDATE adherent SET Login = ?, Password = ?, Prenom = ?, cylindree = ? WHERE IdAdherent = ?';
 
-                //execution de la requete
-                $bdd->query($query);
+                //prepare execute c'est beaucoup mieux, voir injection SQL !
+                $response = $bdd->prepare($query);
+                $result = $response->execute(array($_POST["login"], $hashed_password, $_POST["prenom"], $_POST["cylindree"], $_POST["IdAdherent"]));
+
+                //Attention pensser à mettre a jour les infos de SESSION (fonction ?)
+                $_SESSION['password'] = $hashed_password;
 
                 //information modal html
                 $message_modal = 'Votre profil est mis à jour.';
@@ -137,12 +144,18 @@ if(!empty($_POST)){
                 //je teste si j'ai des données dans les $_POST
                 if (!empty($_POST['login']) and !empty($_POST['password'])) {
 
+                    sleep(3);
                     $hashed_password = My_Crypt($_POST["password"]);
-
-                    $query = 'SELECT IdAdherent, Nom, Prenom, Admin FROM adherent WHERE Login = "'. $_POST['login'] . '" AND Password = "' . $hashed_password . '"';
-
+                    //avant
+                    //$query = 'SELECT IdAdherent, Nom, Prenom, Admin FROM adherent WHERE Login = "'. $_POST['login'] . '" AND Password = "' . $hashed_password . '"';
                     //lancement de la requete
-                    $reponse = $bdd->query($query);
+                    //$reponse = $bdd->query($query);
+
+                    //maintenant pour parer aux injections SQL
+                    $query = 'SELECT IdAdherent, Nom, Prenom, Password, Admin FROM adherent WHERE Login = ? AND Password = ?';
+                    $reponse = $bdd->prepare($query);
+                    $result = $reponse->execute(array($_POST['login'], $hashed_password));
+
 
                     //permet de déterminer le nombre d'enregistrement
                     if ($reponse->rowCount() == 1) {
@@ -154,9 +167,13 @@ if(!empty($_POST)){
                             $prenom = $donnees['Prenom'];
 
                             //mes variables de session que je compléte
+                            //Attention TP a faire, pensser a update les session sur update profil (fonction ?)
                             $_SESSION['id_adherent'] =  $donnees['IdAdherent'];
                             $_SESSION['nom'] = $nom;
                             $_SESSION['prenom'] = $prenom;
+                            $_SESSION['password'] = $donnees['Password'];
+                            //ctrl des actions clefs type admin
+                            $_SESSION['token'] = '';
 
                             //ou 2 si admin (to be continued)
                             $user_level = 1;

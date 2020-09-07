@@ -12,3 +12,5 @@ ErrorDocument 404 /page-404
 RewriteRule	^page-([a-z0-9]*)$ index.php?page=$1	[L]
 
 RewriteRule	^page-([a-z]*)-([0-9]*)$   index.php?page=$1&id=$2	[L]
+
+RewriteRule ^img/news/([0-9]*).jpg$  img/upload/news/$1.jpg	[L]
