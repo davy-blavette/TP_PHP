@@ -30,34 +30,34 @@ if(!empty($_POST)){
                 }
 
                 $query = 'INSERT INTO adherent(
-            Login,
-            Password,
-            Nom,
-            Prenom,
-            DNaiss,
-            Adresse1,
-            CdPost,
-            Ville,
-            Email,
-            Tel,
-            certificat,
-            droit_image,
-            cylindree
-            ) VALUES (
-            "' . $_POST["login"] . '",
-            "' . $hashed_password . '",
-            "' . $_POST["nom"] . '",
-            "' . $_POST["prenom"] . '",
-            "' . $_POST["dnaiss"] . '",
-            "' . $_POST["adresse1"] . '",
-            "' . $_POST["cdpost"] . '",
-            "' . $_POST["ville"] . '",
-            "' . $_POST["email"] . '",
-            "' . $_POST["tel"] . '",
-            1,
-            ' . $droit_image . ',
-            "' . $cylindree . '"
-            )';
+                Login,
+                Password,
+                Nom,
+                Prenom,
+                DNaiss,
+                Adresse1,
+                CdPost,
+                Ville,
+                Email,
+                Tel,
+                certificat,
+                droit_image,
+                cylindree
+                ) VALUES (
+                "' . $_POST["login"] . '",
+                "' . $hashed_password . '",
+                "' . $_POST["nom"] . '",
+                "' . $_POST["prenom"] . '",
+                "' . $_POST["dnaiss"] . '",
+                "' . $_POST["adresse1"] . '",
+                "' . $_POST["cdpost"] . '",
+                "' . $_POST["ville"] . '",
+                "' . $_POST["email"] . '",
+                "' . $_POST["tel"] . '",
+                1,
+                ' . $droit_image . ',
+                "' . $cylindree . '"
+                )';
 
                 //echo "Query : ".$query;
 

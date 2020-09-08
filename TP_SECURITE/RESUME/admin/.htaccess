@@ -1,0 +1,4 @@
+AuthName "Protected folder"
+AuthType Basic
+AuthUserFile "D:\dev\www\CDA03\GIT\Formation\cda03\TP_SECURITE\RESUME\admin\.htpasswd"
+Require valid-user
