@@ -52,17 +52,17 @@
                 <div class="col-lg-8">
                     <div class="contact-form">
                         <h4>Leave A Comment</h4>
-                        <form action="#">
+                        <form id="sendmail" action="#">
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <input type="text" placeholder="Your name">
+                                    <input type="text" name="name" placeholder="Your name">
                                 </div>
                                 <div class="col-lg-6">
-                                    <input type="text" placeholder="Your email">
+                                    <input type="text" name="email" placeholder="Your email">
                                 </div>
                                 <div class="col-lg-12">
-                                    <textarea placeholder="Your messages"></textarea>
-                                    <button type="submit">Send Message</button>
+                                    <textarea name="message" placeholder="Your messages"></textarea>
+                                    <a href="" class="primary-btn signup-btn">Envoyer Message</a>
                                 </div>
                             </div>
                         </form>
