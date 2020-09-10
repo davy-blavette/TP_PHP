@@ -101,19 +101,19 @@ function sendMail($name, $email, $message){
     $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
     try {
         //Server settings
-        $mail->SMTPDebug = 2;                                 // Enable verbose debug output
+        $mail->SMTPDebug = 0;                                 // Enable verbose debug output
         $mail->isSMTP();                                      // Set mailer to use SMTP
         $mail->Host = 'smtp.gmail.com';                                 // Specify main and backup SMTP servers in-v3.mailjet.com
         $mail->SMTPAuth = true;                               // Enable SMTP authentication
-        $mail->Username = 'cda.2isa@gmail.com';                             // SMTP username 7ec368ea4654113c7062e2f3b16f7bb3
-        $mail->Password = 'xxxxx';                             // SMTP password 7db0c1207cb076ea0b68ffe7b9ea49e5
+        $mail->Username = 'cda.2isa@gmail.com';                // SMTP username
+        $mail->Password = 'xxxxx';                             // SMTP password
         $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
         $mail->Port = 587;                                    // TCP port to connect to
-//        $mail->CharSet = 'UTF-8';
+        $mail->CharSet = 'UTF-8';
 
         //Recipients
         $mail->setFrom('cda.2isa@gmail.com', 'Formulaire');
-        $mail->addAddress('davy.blavette@2isa.com', 'Admin');     // Add a recipient
+        $mail->addAddress('davy.blavette@akairnet.com', 'Admin');     // Add a recipient
 //    $mail->addAddress('patrick.nardi@2isa.org');               // Name is optional
         $mail->addReplyTo($email, $name);
 //    $mail->addCC('jean-yves.fontenil@2isa.org');

@@ -1,4 +1,5 @@
 <?php
+/*
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -13,8 +14,8 @@ try {
     $mail->isSMTP();                                      // Set mailer to use SMTP
     $mail->Host = 'smtp.gmail.com';                                 // Specify main and backup SMTP servers in-v3.mailjet.com
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
-    $mail->Username = 'cda.2isa@gmail.com';                             // SMTP username 7ec368ea4654113c7062e2f3b16f7bb3
-    $mail->Password = 'da2qWKSHcm7IxzCg';                             // SMTP password 7db0c1207cb076ea0b68ffe7b9ea49e5
+    $mail->Username = 'cda.2isa@gmail.com';                             // SMTP username
+    $mail->Password = 'xxxxx';                             // SMTP password
     $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
     $mail->Port = 587;                                    // TCP port to connect to
     $mail->CharSet = 'UTF-8';

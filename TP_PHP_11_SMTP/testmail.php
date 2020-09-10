@@ -11,10 +11,10 @@ try {
     //Server settings
     $mail->SMTPDebug = 2;                                 // Enable verbose debug output
     $mail->isSMTP();                                      // Set mailer to use SMTP
-    $mail->Host = 'in-v3.mailjet.com';  // Specify main and backup SMTP servers
+    $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
-    $mail->Username = '7ec368ea4654113c7062e2f3b16f7bb3';                 // SMTP username
-    $mail->Password = '7db0c1207cb076ea0b68ffe7b9ea49e5';                           // SMTP password
+    $mail->Username = 'cda.2isa@gmail.com';                 // SMTP username
+    $mail->Password = 'xxxxx';                           // SMTP password
     $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
     $mail->Port = 587;                                    // TCP port to connect to
 
