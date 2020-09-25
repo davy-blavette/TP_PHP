@@ -1,4 +1,9 @@
 <?php
+
+$dest = htmlspecialchars(str_replace('/n', '','/n <div>test</div>'));
+
+echo $dest;
+
 /*
 include('../config/config.php');
 //include('./functions.php');

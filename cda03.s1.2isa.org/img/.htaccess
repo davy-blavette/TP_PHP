@@ -1,0 +1,2 @@
+#erreur 404 dans le dossier image
+ErrorDocument 404 /img/news/001.jpg

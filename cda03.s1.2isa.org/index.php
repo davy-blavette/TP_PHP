@@ -2,8 +2,32 @@
 //démarage des sessions
 session_start();
 
+
 //mon fichier config PDO, base de données
 include('./config/config.php');
+
+//controle du vol de session, BYPASS
+//
+if(isset($_SESSION['nom']) AND !empty($_SESSION['nom'])){
+
+    if (isset($_COOKIE['bypass']) AND $_COOKIE['bypass'] == $_SESSION['bypass'])
+    {
+        //        var_dump( $_COOKIE['ticket']);
+        //        var_dump( $_SESSION['ticket']);
+        //var_dump(time());
+        $message_modal = 'Ticket valide';
+        $ticket = session_id().microtime().rand(0,9999999999);
+        $ticket = hash('sha512', $ticket);
+        $_SESSION['bypass'] = $ticket;
+        setcookie('bypass', $ticket, time() + (60 * 20), '/'); // Expire au bout de 20 min
+    }
+    else
+    {
+        session_destroy();
+        header("location:index.php");
+    }
+}
+
 
 //mes librairies PHP
 

@@ -1,6 +1,5 @@
 <?php
 
-
 //gere la deconnexion
 if(isset($_GET['deconnexion']) && $_GET['deconnexion'] == 1){
 
@@ -114,7 +113,8 @@ if(isset($_GET['page']) && !empty($_GET['page']) ){
 
             }
 
-        }else if($page == 'informations'){
+        }
+        else if($page == 'informations'){
 
             if(isset($_GET['action']) && !empty($_GET['action'])){
 
@@ -128,7 +128,8 @@ if(isset($_GET['page']) && !empty($_GET['page']) ){
 
             //$message_modal = test(10,20);
 
-        }else if($page == 'information'){
+        }
+        else if($page == 'information'){
 
             if(isset($_GET['id']) && !empty($_GET['id'])){
 

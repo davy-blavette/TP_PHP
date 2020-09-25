@@ -1,6 +1,7 @@
 #j'active le mode reecriture URL
 RewriteEngine On
 
+
 #mon fichier statique erreur 404
 ErrorDocument 404 /page-404
 
