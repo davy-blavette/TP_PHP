@@ -415,7 +415,7 @@ $titre = "Exercices PHP"; // Mettre le titre de la page
 
 <!-- TP Armes -->
 <div class="row">
-    <h2 class="center-align">TP Armes</h2>
+    <h2 class="center-align">TP Synthese</h2>
     <p>L’objectif de ce cas pratique est de réaliser un prototype de page web permettant d’afficher les armes d’un futur jeu vidéo.</p>
     <div class="divider"></div>
 
@@ -427,7 +427,7 @@ $titre = "Exercices PHP"; // Mettre le titre de la page
                 <p>Réaliser une liste déroulante à partir de variables.</p>
             </div>
             <div class="card-action">
-                <a href="tpArmes/tpArmes01/index.php" class="valign-wrapper">exercice <i class="material-icons">arrow_forward</i></a>
+                <a href="synthese/tpArmes01/index.php" class="valign-wrapper">exercice <i class="material-icons">arrow_forward</i></a>
             </div>
         </div>
     </div>
@@ -440,7 +440,7 @@ $titre = "Exercices PHP"; // Mettre le titre de la page
                 <p>Créer un tableau associatif par arme.</p>
             </div>
             <div class="card-action">
-                <a href="tpArmes/tpArmes02/index.php" class="valign-wrapper">exercice <i class="material-icons">arrow_forward</i></a>
+                <a href="synthese/tpArmes02/index.php" class="valign-wrapper">exercice <i class="material-icons">arrow_forward</i></a>
             </div>
         </div>
     </div>
@@ -453,7 +453,7 @@ $titre = "Exercices PHP"; // Mettre le titre de la page
                 <p>Même exercie mais en utilisant la POO.</p>
             </div>
             <div class="card-action">
-                <a href="tpArmes/tpArmes03/index.php" class="valign-wrapper">exercice <i class="material-icons">arrow_forward</i></a>
+                <a href="synthese/tpArmes03/index.php" class="valign-wrapper">exercice <i class="material-icons">arrow_forward</i></a>
             </div>
         </div>
     </div>
@@ -466,7 +466,7 @@ $titre = "Exercices PHP"; // Mettre le titre de la page
                 <p>Transformer tous les attributs en private et apporter les modifications nécessaires à la classe.<br>Ecrire la fonction toString.<br>Faites en sorte qu’une image aléatoire s’affiche pour chacune des armes.</p>
             </div>
             <div class="card-action">
-                <a href="tpArmes/tpArmes04/index.php" class="valign-wrapper">exercice <i class="material-icons">arrow_forward</i></a>
+                <a href="synthese/tpArmes04/index.php" class="valign-wrapper">exercice <i class="material-icons">arrow_forward</i></a>
             </div>
         </div>
     </div>
@@ -479,7 +479,7 @@ $titre = "Exercices PHP"; // Mettre le titre de la page
                 <p>Faire en sorte que l'image s'affiche en fonction du level de chacune des armes.</p>
             </div>
             <div class="card-action">
-                <a href="tpArmes/tpArmes05/index.php" class="valign-wrapper">exercice <i class="material-icons">arrow_forward</i></a>
+                <a href="synthese/tpArmes05/index.php" class="valign-wrapper">exercice <i class="material-icons">arrow_forward</i></a>
             </div>
         </div>
     </div>
@@ -492,7 +492,7 @@ $titre = "Exercices PHP"; // Mettre le titre de la page
                 <p>Ajouter une liste déroulante pour le level max des armes.</p>
             </div>
             <div class="card-action">
-                <a href="tpArmes/tpArmes06/index.php" class="valign-wrapper">exercice <i class="material-icons">arrow_forward</i></a>
+                <a href="synthese/tpArmes06/index.php" class="valign-wrapper">exercice <i class="material-icons">arrow_forward</i></a>
             </div>
         </div>
     </div>
@@ -505,7 +505,7 @@ $titre = "Exercices PHP"; // Mettre le titre de la page
                 <p>Utiliser la session pour conserver les information d'une page à l'autre.</p>
             </div>
             <div class="card-action">
-                <a href="tpArmes/tpArmes07/index.php" class="valign-wrapper">exercice <i class="material-icons">arrow_forward</i></a>
+                <a href="synthese/tpArmes07/index.php" class="valign-wrapper">exercice <i class="material-icons">arrow_forward</i></a>
             </div>
         </div>
     </div>
