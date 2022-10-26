@@ -5,11 +5,9 @@ Vous progresserez par étapes :
 
 Mettre en place des pages Web dynamiques
 
-Apprendre le PHP
+Apprendre le PHP et la POO
 Comprendre les notions clients serveur
 Communiquer avec une base de données
-Utiliser AJAX
-Appréhender les principales failles de sécurité
 
-Programmer en PHP
-Utiliser AJAX
+Utiliser AJAX (FETCH)
+Appréhender les principales failles de sécurité

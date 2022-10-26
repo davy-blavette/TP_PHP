@@ -410,7 +410,125 @@ $titre = "Exercices PHP"; // Mettre le titre de la page
             </div>
         </div>
     </div>
+
 </div>
+
+<!-- TP Armes -->
+<div class="row">
+    <h2 class="center-align">TP Synthese</h2>
+    <p>L’objectif de ce cas pratique est de réaliser un prototype de page web permettant d’afficher les armes d’un futur jeu vidéo.</p>
+    <div class="divider"></div>
+
+    <!-- TP Armes 01 -->
+    <div class="col s12 m6 l4">
+        <div class="card medium teal darken-2">
+            <div class="card-content white-text">
+                <span class="card-title center-align">01 - Les variables</span>
+                <p>Réaliser une liste déroulante à partir de variables.</p>
+            </div>
+            <div class="card-action">
+                <a href="synthese/tpArmes01/index.php" class="valign-wrapper">exercice <i class="material-icons">arrow_forward</i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- TP Armes 02 -->
+    <div class="col s12 m6 l4">
+        <div class="card medium teal darken-2">
+            <div class="card-content white-text">
+                <span class="card-title center-align">02 - Tableau associatif</span>
+                <p>Créer un tableau associatif par arme.</p>
+            </div>
+            <div class="card-action">
+                <a href="synthese/tpArmes02/index.php" class="valign-wrapper">exercice <i class="material-icons">arrow_forward</i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- TP Armes 03 -->
+    <div class="col s12 m6 l4">
+        <div class="card medium teal darken-2">
+            <div class="card-content white-text">
+                <span class="card-title center-align">03 - La POO</span>
+                <p>Même exercie mais en utilisant la POO.</p>
+            </div>
+            <div class="card-action">
+                <a href="synthese/tpArmes03/index.php" class="valign-wrapper">exercice <i class="material-icons">arrow_forward</i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- TP Armes 04 -->
+    <div class="col s12 m6 l4">
+        <div class="card medium teal darken-2">
+            <div class="card-content white-text">
+                <span class="card-title center-align">04 - Améliorations POO</span>
+                <p>Transformer tous les attributs en private et apporter les modifications nécessaires à la classe.<br>Ecrire la fonction toString.<br>Faites en sorte qu’une image aléatoire s’affiche pour chacune des armes.</p>
+            </div>
+            <div class="card-action">
+                <a href="synthese/tpArmes04/index.php" class="valign-wrapper">exercice <i class="material-icons">arrow_forward</i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- TP Armes 05 -->
+    <div class="col s12 m6 l4">
+        <div class="card medium teal darken-2">
+            <div class="card-content white-text">
+                <span class="card-title center-align">05 - Gestion d'images/level</span>
+                <p>Faire en sorte que l'image s'affiche en fonction du level de chacune des armes.</p>
+            </div>
+            <div class="card-action">
+                <a href="synthese/tpArmes05/index.php" class="valign-wrapper">exercice <i class="material-icons">arrow_forward</i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- TP Armes 06 -->
+    <div class="col s12 m6 l4">
+        <div class="card medium teal darken-2">
+            <div class="card-content white-text">
+                <span class="card-title center-align">06 - Liste déroulante et formulaire</span>
+                <p>Ajouter une liste déroulante pour le level max des armes.</p>
+            </div>
+            <div class="card-action">
+                <a href="synthese/tpArmes06/index.php" class="valign-wrapper">exercice <i class="material-icons">arrow_forward</i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- TP Armes 07 -->
+    <div class="col s12 m6 l4">
+        <div class="card medium teal darken-2">
+            <div class="card-content white-text">
+                <span class="card-title center-align">07 - La session</span>
+                <p>Utiliser la session pour conserver les information d'une page à l'autre.</p>
+            </div>
+            <div class="card-action">
+                <a href="synthese/tpArmes07/index.php" class="valign-wrapper">exercice <i class="material-icons">arrow_forward</i></a>
+            </div>
+        </div>
+    </div>
+    
+    </div>
+    <!-- TP PDO -->
+<div class="row">
+    <h2 class="center-align">TP PDO</h2>
+    <p>L’objectif de ce cas pratique est de pouvoir manipuler nos bases de données MySQL en PHP .</p>
+    <div class="divider"></div>
+
+    <!-- TP Armes 01 -->
+    <div class="col s12 m6 l4">
+        <div class="card medium teal darken-2">
+            <div class="card-content white-text">
+                <span class="card-title center-align">01 - Se connecter</span>
+                <p>Se connecter à une base de données.</p>
+            </div>
+            <div class="card-action">
+                <a href="pdo/tp_01/index.php" class="valign-wrapper">exercice <i class="material-icons">arrow_forward</i></a>
+            </div>
+        </div>
+    </div>
 
 
 <?php
